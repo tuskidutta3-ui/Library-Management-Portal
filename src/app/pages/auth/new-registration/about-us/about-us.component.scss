@@ -1,0 +1,35 @@
+.about-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3f51b5;
+    text-align: center;
+}
+.about-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    padding: 10px;
+}
+.about-content h3 {
+    font-size: 18px;
+    color: #ff9800;
+    margin-top: 15px;
+}
+.about-content ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+.about-content ul li {
+    margin-bottom: 8px;
+}
+.close-btn {
+    background: #ff036e;
+    color: rgb(255, 247, 247);
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+}
+.close-btn:hover {
+    background: #db0f31cd;
+}
+ 

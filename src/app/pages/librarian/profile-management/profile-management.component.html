@@ -1,0 +1,17 @@
+<!-- change-password.component.html -->
+<button class="btn btn-custom-back mt-2" (click)="goBack()" aria-label="Go back">
+    <i class="fas fa-chevron-left"></i>
+    <span class="ms-2 d-none d-md-inline">Back</span>
+</button> 
+<div class="profile-container">
+    <div class="profile-card">
+        <img [src]="profileImage" alt="Profile Image" class="profile-image" (click)="triggerFileInput()">
+        <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" class="file-input" hidden>
+        <button (click)="triggerFileInput()" class="btn upload-btn">Change Profile Picture</button>
+        <h2 class="mt-2">{{ librarian.name }}</h2>
+        <p>{{ librarian.email }}</p>
+        <button (click)="changePassword()" class="btn-pass">Change Password</button>
+        <!-- <button (click)="logout()" class="btn logout">Logout</button> -->
+        <button class="btn btn-success mt-2">Save</button>
+    </div>
+</div>

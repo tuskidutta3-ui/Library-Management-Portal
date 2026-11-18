@@ -1,0 +1,83 @@
+/* Professional dialog box design */
+/* Title - Clean, simple typography */
+.dialog-title {
+  font-size: 1.25rem; /* Slightly smaller font size for subtlety */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray for readability */
+  font-weight: 600; /* Semi-bold text for authority */
+}
+/* Dialog action buttons container */
+.dialog-actions {
+  display: flex;
+  justify-content: center; /* Center buttons */
+  gap: 20px; /* Add space between buttons */
+}
+/* Base button styles */
+.dialog-button {
+  font-size: 1rem;
+  padding: 4px 25px;
+  border-radius: 4px; /* Subtle corner rounding */
+  border: 1px solid #ccc; /* Light grey border for subtle contrast */
+  background-color: #fff; /* White background */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  text-transform: none;
+  font-weight: 500; /* Normal font weight for buttons */
+  color: #333; /* Dark text for readability */
+  cursor: pointer;
+  box-sizing: border-box;
+  width: auto;
+}
+/* Yes Button - Soft professional color */
+.yes-button {
+  color: #0066cc; /* Professional blue for Yes */
+  border-color: #0066cc;
+}
+/* No Button - Soft professional red */
+.no-button {
+  color: #b02a2a; /* Professional muted red */
+  border-color: #b02a2a;
+}
+/* Hover state - Subtle effect */
+.dialog-button:hover {
+  background-color: #f2f2f2; /* Light grey hover state */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+/* Selected state (when one button is chosen) */
+.selected {
+  background-color: #f0f8ff; /* Light blue for selected (very subtle) */
+  border-color: #0066cc; /* Blue border when selected */
+}
+.selected.yes-button {
+  background-color: #e6f0ff !important; /* Lighter blue for Yes button when selected */
+}
+.selected.no-button {
+  background-color: #fbe3e4 !important; /* Lighter pink for No button when selected */
+}
+/* Focus styles - Minimal and accessible */
+.dialog-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.3); /* Soft blue outline */
+}
+/* Optional: Animating the fade-in (subtle animation) */
+.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+}
+/* Fade-in effect for the dialog */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Accessibility considerations - Focused state */
+.dialog-button:focus-visible {
+  outline: 2px solid #0066cc; /* Clear focus outline for accessibility */
+}

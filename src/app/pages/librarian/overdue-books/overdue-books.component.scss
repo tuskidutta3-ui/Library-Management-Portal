@@ -1,0 +1,40 @@
+.col-auto {
+    display: flex;
+    justify-content: center;
+}
+.card-header {
+    background-color: #eae5e5;
+    color: #b30045;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+.custom-border {
+    border: 2px solid #6c757d;
+    /* Change to your desired color */
+}
+.custom-header {
+    font-weight: bold;
+    /* Adjust weight as needed */
+    font-size: 1.25rem;
+    /* Adjust size as needed */
+}
+.view-button{
+    background-color: #820d0d;
+    color: white;
+}
+ .update-button{
+    background-color: #390507;
+    color: white;
+}
+@media (min-device-width: 280px) and (max-device-width: 700px) {
+    .marginP {
+        margin-top: 15px;
+    }
+}
+@media (min-device-width: 701px) and (max-device-width: 1023px) {
+}
+@media (min-device-width: 1024px) {
+}

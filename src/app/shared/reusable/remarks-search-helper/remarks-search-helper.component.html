@@ -1,0 +1,36 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Subscription Remarks</span>
+    <span class="flex-grow-1 flex-shrink-1 flex-basis-auto"></span>
+    <button mat-icon-button data-dismiss="modal" mat-dialog-close>
+        <mat-icon>cancel</mat-icon>
+    </button>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-block overflow-auto">
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                        <ng-container matColumnDef="select">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Select</mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                                <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="toggleSelection1(row)"></mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="remarks">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Remarks</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.subsRemarks}}</mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="success" class="btn btn-secondary" data-dismiss="modal"
+        (click)="selectRow()">Ok</button>
+</div>

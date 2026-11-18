@@ -1,0 +1,105 @@
+$primary-color: #0097a7;
+$warn-color: #f50057;
+$accent-color: #4caf50;
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #ffffff;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+.dialog-content {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Ensures buttons wrap on smaller screens */
+}
+.action-btn {
+    flex: 1;
+    font-size: 20px;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 21px;
+    padding: 7px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fffafa;
+    font-weight: 500;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    mat-icon {
+        margin-right: 8px;
+    }
+    span {
+        display: inline-block;
+    }
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    &:active {
+        transform: translateY(1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+.download-btn {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+.print-btn {
+    background: linear-gradient(135deg, #ff4081, #f50057);
+}
+.open-btn {
+    background: linear-gradient(135deg, #66bb6a, #4caf50);
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dialog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .action-buttons {
+        gap: 8px;
+        /* Reduce gap between buttons */
+    }
+    .action-btn {
+        flex: 1 1 45%;
+        /* Allow buttons to be smaller and wrap */
+        font-size: 16px;
+        padding: 6px 0;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 480px) {
+    .dialog-header {
+        padding: 10px;
+    }
+    .action-buttons {
+        gap: 4px;
+        /* Even smaller gap between buttons */
+    }
+    .action-btn {
+        flex: 1 1 100%;
+        /* Stack buttons vertically */
+        font-size: 14px;
+        padding: 5px 0;
+    }
+    .title {
+        font-size: 1.1rem;
+    }
+}

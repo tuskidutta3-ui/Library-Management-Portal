@@ -1,0 +1,44 @@
+<header class="header">
+  <h1 class="project-title">Payment Confirmation</h1>
+  <div class="check-icon-container">
+    <div class="check-icon">
+      <i class="fa fa-check"></i>
+    </div>
+  </div>
+  <p class="project-description">
+    🎉 Your payment was successfully processed! Below are your transaction details.
+  </p>
+</header>
+<!-- Spinner -->
+<div class="spinner-container" *ngIf="isLoading">
+  <div class="spinner" id="spinner"></div>
+</div>
+<!-- Payment Summary (visible when isLoading is false) -->
+<section class="payment-summary" *ngIf="!isLoading">
+  <div class="payment-header">
+    <h2>Payment Details</h2>
+    <p>Thank you for your purchase. Please find the details of your payment below:</p>
+  </div>
+  <div class="transaction-details">
+    <div class="transaction-item">
+      <span class="label">Transaction ID:</span>
+      <span class="value">{{ transactionId }}</span>
+    </div>
+    <div class="transaction-item">
+      <span class="label">Order ID:</span>
+      <span class="value">{{ orderId }}</span>
+    </div>
+    <div class="transaction-item">
+      <span class="label">Payment Date:</span>
+      <span class="value">{{ paymentDate }}</span>
+    </div>
+    <div class="transaction-item">
+      <span class="label">Amount Paid:</span>
+      <span class="value">₹{{ amountPaid }}</span>
+    </div>
+  </div>
+  <section class="cta-section float-right">
+    <button mat-button (click)="onClose()" class="close-button">Close</button>
+    <button mat-button class="view-receipt-button">View Receipt</button>
+  </section>
+</section>

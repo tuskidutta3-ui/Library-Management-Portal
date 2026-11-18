@@ -1,0 +1,14 @@
+<h2 mat-dialog-title class="dialog-title">{{ dialogTitle }}</h2>
+<div mat-dialog-content class="dialog-content d-flex justify-content-center align-items-center text-center">
+        <p>{{ dialogMessage }}</p>
+    </div>
+<div mat-dialog-actions class="dialog-actions">
+        <!-- Yes Button -->
+        <button mat-button #yesButton id="yesButton" (click)="onConfirmAdd()" [ngClass]="{'selected': isYesSelected}"
+                (keydown.arrowright)="onArrowRight()" (keydown.enter)="onEnter()" class="dialog-button yes-button"
+                tabindex="0">Yes</button>
+        <!-- No Button -->
+        <button mat-button #noButton id="noButton" (click)="onCancel()" [ngClass]="{'selected': !isYesSelected}"
+                (keydown.arrowleft)="onArrowLeft()" (keydown.enter)="onEnter()" class="dialog-button no-button"
+                tabindex="0">No</button>
+</div>

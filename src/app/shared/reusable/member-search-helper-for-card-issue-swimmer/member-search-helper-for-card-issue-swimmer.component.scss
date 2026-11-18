@@ -1,0 +1,157 @@
+.mat-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    display: table;
+    border-collapse: collapse;
+    margin: 0px;
+  }
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  table {
+    width: 100%;
+  }
+  .md-link-primary {
+    color: #548431;
+  }
+  .md-link-danger {
+    color: #c51e27;
+  }
+  .tableHeader {
+    background-color: rgb(251, 251, 251);
+  }
+  ::ng-deep .mat-slide-toggle-bar {
+    background-color: #87de18;
+  }
+  ::ng-deep .mat-slide-toggle-thumb {
+    background-color: green;
+  }
+  /* Default style for PC */
+  .dialog-pc-width {
+    width: 45%;
+  }
+  .mat-icon,
+  .gridUnDeleteButton {
+    transition: transform 0.3s;
+  }
+  .gridUnDeleteButton:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+  }
+  /* Style for mobile */
+  @media screen and (max-width: 600px) {
+    .dialog-mobile-width {
+      width: 90%;
+    }
+  }
+  @media (min-device-width: 280px) and (max-device-width: 700px) {
+    .page-title-box {
+      display: flex;
+      justify-content: space-between;
+      /* Space between button and breadcrumbs */
+      align-items: center;
+      /* Align items vertically centered */
+    }
+    .btn-custom-back {
+      margin-right: auto;
+      /* Push the button to the left */
+    }
+    .page-title {
+      flex-grow: 1;
+      /* Allow the title to occupy remaining space */
+      text-align: center;
+      /* Center the title */
+      margin: 0;
+      /* Remove default margin */
+    }
+    .page-title-right {
+      margin-left: auto;
+      /* Align breadcrumb to the right */
+      text-align: right;
+      /* Ensure breadcrumb text aligns to the right */
+    }
+    .breadcrumb {
+      margin: 0;
+      /* Remove margin for better alignment */
+    }
+    // .head-elements-position {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   flex-direction: column;
+    // }
+    .adjust {
+      margin-top: 16px;
+    }
+    .button-display {
+      display: flex;
+      justify-content: center;
+    }
+    .mat-column-mem_Code {
+      padding-left: 1%;
+      flex: 0 0 30%;
+    }
+    .mat-column-memName {
+      flex: 0 0 50%;
+    }
+    .mat-column-Action {
+      flex: 0 0 20%;
+    }
+    /* Add padding to the top of your main content */
+    .container-fluid {
+      padding-top: 170px;
+      /* Match the height of the navbar */
+    }
+  }
+  @media (min-device-width: 701px) and (max-device-width: 1023px) {
+    .head-elements-position {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+    .mat-column-mem_Code {
+      padding-left: 1%;
+      flex: 0 0 30%;
+    }
+    .mat-column-memName {
+      flex: 0 0 50%;
+    }
+    .mat-column-Action {
+      flex: 0 0 20%;
+    }
+    /* Add padding to the top of your main content */
+    .container-fluid {
+      padding-top: 165px;
+      /* Match the height of the navbar */
+    }
+  }
+  @media (min-device-width: 1024px) {
+    .head-elements-position {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+    .mat-column-mem_Code {
+      padding-left: 1%;
+      flex: 0 0 30%;
+    }
+    .mat-column-memName {
+      flex: 0 0 50%;
+    }
+    .mat-column-Action {
+      flex: 0 0 20%;
+    }
+    /* Add padding to the top of your main content */
+    .container-fluid {
+      padding-top: 80px;
+      /* Match the height of the navbar */
+    }
+  }

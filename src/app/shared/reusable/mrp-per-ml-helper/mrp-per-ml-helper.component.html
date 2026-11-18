@@ -1,0 +1,51 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Item Search</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content scrollable-form">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-block overflow-auto">
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                        <ng-container matColumnDef="billNO">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Bill No</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.billNo}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="billDate">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Bill Date</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.billDate}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="mrpPerMl">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Mrp Per ML</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.purRateInMl}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="salePerMl">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Sale Per ML</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.mrpPerMlSl}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Action">
+                            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <button mat-menu-item (click)="selectRow(element)">
+                                    <div
+                                        style="display: flex; align-items: center; border: 3px solid #4CAF50; border-radius: 3px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 12l4 4L19 7" stroke="#4CAF50" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

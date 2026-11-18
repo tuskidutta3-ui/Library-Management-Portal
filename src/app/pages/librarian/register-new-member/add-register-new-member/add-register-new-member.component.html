@@ -1,0 +1,98 @@
+  <div mat-dialog-title class="d-flex shadow-sm">
+    <span>Add New Books</span>
+    <span class="flex-grow-1 flex-shrink-1 flex-basis-auto"></span>
+    <button mat-icon-button data-dismiss="modal" mat-dialog-close>
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content data-target="#modal" class="dialog-content">
+    <form [formGroup]="editManageNewBooksInfo" class="mat-form-field">
+      <div class="row mt-3">
+        <label class="form-label col-md-3" for="userName"
+          >Member Name<span class="text-danger">*</span></label
+        >
+        <div class="col-md-9">
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            formControlName="userName"
+            placeholder="Name"
+            autocomplete="off"
+            minlength="1"
+            maxlength="200"
+          />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <label class="form-label" for="phoneNo"
+            >Phone Number<span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNo"
+            formControlName="phoneNo"
+            placeholder="Phone No"
+            autocomplete="off"
+            minlength="1"
+            maxlength="10" (keypress)="numberOnly($event)"
+          />
+        </div>
+        <div class="col-md-8">
+          <label class="form-label" for="userEmail"
+            >Email<span class="text-danger">*</span></label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="userEmail"
+            formControlName="userEmail"
+            placeholder="Email"
+            autocomplete="off"
+            minlength="1"
+            maxlength="200"
+          />
+        </div>
+      </div>
+      <!-- <div class="row mt-3">
+              <div class="col-md-4 marginP">
+                  <label class="form-label" for="des">Author/Publications<span class="text-danger">*</span> </label>
+                  <textarea class="form-control" id="author" formControlName="author"
+                      placeholder="Author/Publication" autocomplete="off" maxlength="50" rows="3"></textarea>
+              </div>
+              <div class="col-md-8 marginP">
+                  <label class="form-label" for="des">Description<span class="text-danger">*</span> </label>
+                  <textarea class="form-control" id="desc" formControlName="desc"
+                      placeholder="About the Book" autocomplete="off" maxlength="300" rows="3"></textarea>
+              </div>
+          </div>
+          <div class="row mt-3">
+              <div class="col-md-7 col-xl-7 marginT">
+                  <label for="formFileSm" class="form-label">Upload Photo<span class="text-danger">*</span></label>
+                  <input class="form-control form-control-sm" id="formFileSm" type="file"
+                      accept=".jpeg, .jpg, .png, .img" (change)="selectFiles($event)"> <span class="text-danger"
+                      style="font-weight: bold;">*File
+                      should
+                      be in
+                      .jpeg, .jpg, .png and .img
+                      format and size should be within 2 mb</span>
+              </div>
+          </div> -->
+      <app-loading></app-loading
+      ><!-- spinner -->
+    </form>
+    <!-- {{editManageNewBooksInfo.value | json}} -->
+  </div>
+  <div mat-dialog-actions class="float-end" *ngIf="!triggerView">
+    <button
+      class="btn btn-primary"
+      style="float: right"
+      type="submit"
+      (click)="onSubmit()"
+      [disabled]="editManageNewBooksInfo.invalid"
+    >
+      Save
+    </button>
+  </div>

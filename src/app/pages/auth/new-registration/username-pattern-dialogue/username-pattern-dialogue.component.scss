@@ -1,0 +1,33 @@
+/* Style the dialog box */
+.mat-dialog-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Style the title */
+h2.mat-dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+/* Style the paragraph */
+mat-dialog-content p {
+    font-size: 16px;
+    color: #555;
+}
+/* Style the button */
+mat-dialog-actions button {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+/* Button hover effect */
+mat-dialog-actions button:hover {
+    background-color: #0056b3;
+}

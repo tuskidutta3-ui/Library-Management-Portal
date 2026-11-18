@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+/* Why Register Section */
+.why-register {
+    background: #ffffff;
+    padding: 50px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    border-radius: 10px;
+}
+.why-register h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+/* Benefits Container */
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+/* Individual Benefit Box */
+.benefit {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+.benefit h3 {
+    font-size: 18px;
+    color: #333;
+}
+.benefit p {
+    font-size: 14px;
+    color: #666;
+}
+.benefit:hover {
+    transform: scale(1.05);
+    background: #eef7ff;
+}
+/* Register Button */
+.register-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.register-btn:hover {
+    background: #0056b3;
+}
+.close-btn {
+    background: #ad0048;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+}
+.close-btn:hover {
+    background: #db0f31cd;
+}

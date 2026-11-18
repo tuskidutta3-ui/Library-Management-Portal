@@ -1,0 +1,84 @@
+<header class="navbar-both" *ngIf=" userType === 'MemberUser'">
+    <div class="navbar-container-both">
+        <!-- Logo on the left -->
+        <a class="logo">
+            <img src="assets/images/LOGO3.png" alt="Logo">
+        </a>
+        <!-- Title at the center -->
+        <span class="library-title">BYTEREADS DIGITAL LIBRARY</span>
+        <!-- Home button on the right with an icon -->
+        <span class="home-button" (click)="goBack()">
+            <i class="fas fa-home"></i> Home
+        </span>
+    </div>
+</header>
+<form [formGroup]="logInForm" (ngSubmit)="loginHandler($event)" class="login-form">
+    <div *ngIf="userType === 'MemberUser'" class="login-page-Member-user">
+        <div class="overlay"></div>
+        <div class="row">
+            <div class="col-md-12 col-xl-12">
+                <div class="login-container">
+                    <div class="login-box">
+                        <h2 class="login-title">Member User Login</h2>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span class="text">Username</span>
+                            </div>
+                            <i class="fas fa-user neon-icon" id="user-icon"></i>
+                            <input type="email" class="form-control neon-input" formControlName="userName"
+                                placeholder="Enter your email" aria-label="Username" />
+                            <div *ngIf="logInForm.controls['userName'].invalid && logInForm.controls['userName'].touched"
+                                class="error-message">
+                                Please enter a valid username.
+                            </div>
+                        </div>
+                        <div class="input-group password-group">
+              <div class="input-label">
+                <span class="text">Password</span>
+              </div>
+              <i class="fas fa-lock neon-icon" id="lock-icon"></i>
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                class="form-control neon-input"
+                formControlName="userPW"
+                placeholder="Enter your password"
+                aria-label="Password"
+              />
+              <!-- 👁 Eye Icon -->
+              <i
+                class="fas toggle-password"
+                [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+                (click)="togglePassword()"
+              >
+              </i>
+              <div
+                *ngIf="
+                  logInForm.controls['userPW'].invalid &&
+                  logInForm.controls['userPW'].touched
+                "
+                class="error-message"
+              >
+                Password is required.
+              </div>
+            </div>
+                        <!-- <div class="form-check d-flex justify-content-center">
+                            <a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?</a>
+                        </div> -->
+                        <button class="btn neon-button" type="submit" [disabled]="logInForm.invalid || isLoading">
+                            <span *ngIf="isLoading">Logging In...</span>
+                            <span *ngIf="!isLoading">Log In</span>
+                        </button>
+                        <!-- 🔹 Add Registration Link -->
+                        <div class="register-link">
+                            <span>Don't have an account?</span>
+                            <a routerLink="/auth/new-registration" [queryParams]="{ type: 'member' }" class="register-btn">Create</a>
+                        </div>
+                        <a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?Reset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <app-loading></app-loading
+  ><!-- spinner -->
+</form> 

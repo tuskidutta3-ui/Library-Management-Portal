@@ -1,0 +1,112 @@
+.mat-row,
+.mat-header-row {
+  display: table-row;
+}
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 11px 15px;
+  line-break: unset;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+table {
+  width: 100%;
+}
+.md-link-primary {
+  color: #548431;
+}
+.md-link-danger {
+  color: #c51e27;
+}
+.tableHeader {
+  background-color: rgb(251, 251, 251);
+}
+::ng-deep .mat-slide-toggle-bar {
+  background-color: #87de18;
+}
+::ng-deep .mat-slide-toggle-thumb {
+  background-color: green;
+}
+/* Default style for PC */
+.dialog-pc-width {
+  width: 45%;
+}
+/* Style for mobile */
+@media screen and (max-width: 600px) {
+  .dialog-mobile-width {
+    width: 90%;
+  }
+}
+.button-display {
+  display: flex;
+  justify-content: center;
+}
+.btn-primary {
+  margin-right: 2%;
+}
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+/* Soft Yellow */
+.status-pending {
+  background-color:#ffd145c2;
+  color: #000000;
+  border: 1px solid #ffe082;
+}
+/* Soft Green */
+.status-approve {
+  background-color: #82ff8c;
+  color:  #000000;
+  border: 1px solid #a5d6a7;
+}
+/* Soft Red */
+.status-reject {
+ background-color: #e26a5c;
+  color:#000000;
+  border: 1px solid #a5d6a7;
+}
+@media (min-device-width: 280px) and (max-device-width: 700px) {
+  .head-elements-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .marginP {
+    margin-top: 15px;
+  }
+}
+@media (min-device-width: 701px) and (max-device-width: 1023px) {
+  .head-elements-position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media (min-device-width: 1024px) {
+  .head-elements-position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.btn-add-button {
+  background: brown;
+  color: white;
+}
+.header-title {
+  color: brown;
+}

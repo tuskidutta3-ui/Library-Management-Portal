@@ -1,0 +1,153 @@
+/* Card Styling */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Table Wrapper with Scrollable Content */
+.table-container {
+  max-height: 300px;
+  /* Adjust the height as needed */
+  overflow-y: auto;
+  /* Enables vertical scrolling */
+  position: relative;
+}
+/* Sticky Header and Footer */
+.mat-header-row.sticky,
+.mat-footer-row.sticky {
+  position: sticky;
+  z-index: 2;
+}
+.mat-header-row.sticky {
+  top: 0;
+  background-color: #007bff;
+  /* Header background color */
+  color: white;
+  /* Header text color */
+}
+.mat-footer-row.sticky {
+  bottom: 0;
+  background-color: #007bff;
+  /* Footer background color */
+  color: white;
+  /* Footer text color */
+}
+/* Header Cell Styling */
+.mat-header-cell {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  text-align: center;
+}
+/* Data Cell Styling */
+.mat-cell {
+  padding: 8px;
+  text-align: center;
+}
+/* Search Input Styling */
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+.hovered-row {
+  background-color: #eac803;
+  /* Adjust this based on your design */
+}
+.tableHeader {
+  background-color: #007bff;
+  color: white;
+}
+/* Style for hovered row */
+.mat-row.hovered-row {
+  background-color: #e8f5e9 !important;
+}
+/* Style for the button container */
+.cancel-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+/* Style for the cancel (cross) icon */
+.cancel-icon {
+  transition: transform 0.3s ease-in-out, stroke 0.3s ease;
+  transform-origin: center;
+  stroke: #FF5722;
+  /* Initial stroke color (a nice red) */
+}
+/* Hover effect for scaling and color change */
+.cancel-btn:hover .cancel-icon {
+  transform: scale(1.2);
+  /* Scale the icon slightly on hover */
+  stroke: #FF4081;
+  /* Change color to a lighter red on hover */
+}
+/* Active (clicked) effect: Shrink and rotate slightly */
+.cancel-btn:active .cancel-icon {
+  transform: scale(1.1) rotate(45deg);
+  /* Shrink and rotate on click */
+}
+/* Bounce animation for hover interaction */
+.cancel-btn:hover .cancel-icon {
+  animation: bounce 0.6s ease-in-out;
+}
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-15deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(0);
+  }
+}
+@media (min-device-width: 1024px) {
+  .head-elements-position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .mat-column-billno {
+    padding-left: 1%;
+    flex: 0 0 15%;
+  }
+  .mat-column-orderno {
+    flex: 0 0 15%;
+  }
+  .mat-column-code {
+    flex: 0 0 15%;
+  }
+  .mat-column-member {
+    flex: 0 0 20%;
+  }
+  .mat-column-waiter {
+    flex: 0 0 17%;
+  }
+  .mat-column-amount {
+    flex: 0 0 10%;
+  }
+  .mat-column-cancel {
+    flex: 0 0 8%;
+  }
+}

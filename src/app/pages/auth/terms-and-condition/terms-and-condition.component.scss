@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Header */
+header {
+    text-align: center;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+/* Terms Content */
+.terms-content {
+    padding: 20px;
+}
+.terms-content h2 {
+    color: #007bff;
+    margin-top: 20px;
+}
+/* Links */
+.terms-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.terms-content a:hover {
+    text-decoration: underline;
+}
+.termsAndCondition {
+    display: inline-block;
+    color: #0037ff; /* Blue color */
+    cursor: pointer; /* Should work */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.termsAndCondition:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,120 @@
+<!-- <div class="overlay"></div>? -->
+<header class="navbar">
+    <div class="navbar-container">
+        <!-- Logo on the left -->
+        <a class="logo">
+            <img src="assets/images/Library_Logo.png" alt="Logo">
+        </a>
+        <!-- Title at the center -->
+        <span class="library-title">BYTEREADS DIGITAL LIBRARY</span> 
+        <!-- Home button on the right with an icon -->
+        <span class="home-button" (click)="goBack()">
+            <i class="fas fa-home"></i> HOME
+        </span>
+    </div>
+</header>
+<form [formGroup]="registerForm" (ngSubmit)="registerHandler()" class="register-form">
+    <div class="register-container">
+        <div class="register-box">
+            <h2 class="register-title text-center">New Registration</h2>
+            <div class="row">
+                <!-- First Name -->
+                <label class="col-md-6 custom-label">Name<span class="text-danger">*</span></label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control " formControlName="userName"
+                        placeholder="Enter First Name" />
+                </div> 
+            </div>
+            <div class="row mt-2">
+                <!-- Phone Number -->
+                <label class="col-md-6 custom-label">Phone Number<span class="text-danger">*</span></label>
+                <div class="col-md-6  ">
+                    <input type="text" class="form-control " formControlName="phoneNo"
+                        placeholder="Enter Phone Number" maxlength="10" (keypress)="numberOnly($event)" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <!-- Email -->
+                <label class="col-md-6 custom-label">Email<span class="text-danger">*</span></label>
+                <div class="col-md-6  ">
+                    <input type="email" class="form-control " formControlName="userEmail"
+                        placeholder="Enter Email" maxlength="100"/>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <!-- Membership Type -->
+                <label class="col-md-6 custom-label">Membership Type<span class="text-danger">*</span></label>
+                <div class="col-md-6  ">
+                    <select class="form-control " formControlName="userType">
+                        <option value="">Select Membership Type</option>
+                        <option value="S">Member</option>
+                        <option value="F">Faculty</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <!-- Password -->
+                <label class="col-md-6 custom-label">Password<span class="text-danger">*</span></label>
+                <div class="col-md-6  ">
+                    <input type="password" class="form-control " formControlName="password"
+                        placeholder="Enter your password" />
+                    <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched"
+                        class="error-message">
+                        Password must be at least 6 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <!-- Confirm Password -->
+                <label class="col-md-6 custom-label">Confirm Password<span class="text-danger">*</span></label>
+                <div class="col-md-6 ">
+                    <input type="password" class="form-control " formControlName="userPw"
+                        placeholder="Re-enter your password" />
+                    <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.controls['userPw'].touched"
+                        class="error-message">
+                        Passwords do not match.
+                    </div>
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <div class="col-12 text-center mt-3">
+                <button class="btn neon-button w-50" type="submit" [disabled]="registerForm.invalid || isLoading">
+                    <span *ngIf="isLoading">Registering...</span>
+                    <span *ngIf="!isLoading">Register</span>
+                </button>
+            </div>
+            <span class="text-dark">By Clicking Register, you accept all the </span>
+            <a href="javascript:void(0);" (click)="openTermsAndCondiDialog()" class="termsAndCondition">Terms & Conditions</a>
+            <!-- Login Link -->
+            <div class="col-12 text-center mt-2">
+                <span class="text-dark">Already have an account?</span>
+                <a routerLink="/auth/login" class="login-btn">Log In</a>
+            </div>
+        </div>
+    </div>
+        <app-loading></app-loading
+  ><!-- spinner -->
+</form>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="about" (click)="openAboutUsDialog()">
+            <i class="fa fa-info-circle"></i>
+            <span>About Us</span>
+        </div>
+        <div class="contact">
+            <i class="fa fa-phone"></i>
+            <span>Contact Us:</span>
+            <a href="tel:7777777777">7777777777</a> <span class="text-dark">(9 A.M to 7 P.M.)</span>
+        </div>
+        <div class="email">
+            <i class="fa fa-envelope"></i>
+            <span>Email:</span>
+            <a href="mailto:support&#64;bytereads.com.">support&#64;bytereads.com.</a>
+        </div>
+        <div class="website">
+            <i class="fa fa-globe"></i>
+            <span>Website:</span>
+            <a href="https://www.bytereads.com" target="_blank">www.bytereads.com</a>
+        </div>
+    </div>
+</footer>

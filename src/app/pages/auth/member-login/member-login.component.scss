@@ -1,0 +1,609 @@
+ .hero-section {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     /* Full viewport height */
+     overflow: hidden;
+ }
+ .hero-slideshow {
+     width: 100%;
+     height: 100%;
+     position: relative;
+ }
+ .hero-slide {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+ }
+ .fullscreen-video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /* Ensures the video covers the entire screen */
+ }
+ .password-group {
+    position: relative;
+}
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+    font-size: 16px;
+}
+.toggle-password:hover {
+    color: #550b07; /* match neon theme */
+}
+ .nav-button {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(0, 0, 0, 0.5);
+     color: white;
+     border: none;
+     padding: 10px 20px;
+     font-size: 24px;
+     cursor: pointer;
+     z-index: 2;
+ }
+ .prev {
+     left: 10px;
+ }
+ .next {
+     right: 10px;
+ }
+ .hero-slideshow {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+ }
+ .hero-slide {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     opacity: 0;
+     transition: opacity 1s ease-in-out;
+ }
+ .hero-slide.active {
+     opacity: 1;
+ }
+ .hero-image video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .nav-button {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(0, 0, 0, 0.5);
+     color: white;
+     border: none;
+     padding: 10px 15px;
+     cursor: pointer;
+     font-size: 24px;
+     z-index: 100;
+ }
+ .prev {
+     left: 20px;
+ }
+ .next {
+     right: 20px;
+ }
+ /* Buttons inside the navbar */
+ .profile-button {
+     background: transparent;
+     border: none;
+     color: white;
+     font-size: 16px;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     cursor: pointer;
+     padding: 5px 10px;
+ }
+ .profile-button:hover {
+     background: rgba(255, 255, 255, 0.2);
+     border-radius: 5px;
+ }
+ /* Marquee Styling */
+ .ilss-marquee {
+     flex-grow: 1;
+     overflow: hidden;
+     white-space: nowrap;
+     position: absolute;
+     left: 55%;
+     transform: translateX(-50%);
+     width: 50%;
+     font-weight: bold;
+     color: white;
+ }
+ .ilss-marquee marquee {
+     font-size: 16px;
+     font-weight: 600;
+     color: rgb(0, 0, 0);
+ }
+ /* Common Button Styling */
+ .profile-button {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     padding: 8px 12px;
+     background: white;
+     color: #8B4513;
+     /* Brown text color */
+     border: 2px solid #8B4513;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     margin-top: 5%;
+ }
+ .profile-button mat-icon {
+     font-size: 20px;
+     color: #8B4513;
+ }
+ /* Hover Effect */
+ .profile-button:hover {
+     background: #8B4513;
+     color: white;
+ }
+ .profile-button:hover mat-icon {
+     color: white;
+ }
+ ////////////////////////////OFFICE LOGIN/////////////////////////////
+ /* Overlay Effect */
+ .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     /* Dark transparent overlay */
+ }
+ /* Centered Login Container */
+ .login-container {
+     position: relative;
+     z-index: 1;
+     // max-width: 400px; /* Adjust as needed */
+     width: 100%;
+     padding: 20px;
+ }
+ /* Card Styling */
+ .login-box {
+     width: 380px;
+     padding: 30px;
+     border-radius: 12px;
+     // background: rgba(255, 255, 255, 0.2); /* White with transparency */
+     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+     /* Golden glow */
+     text-align: center;
+     transition: transform 0.3s ease-in-out;
+     margin-left: 38%;
+     background-color: transparent;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     animation: _ngcontent-ng-c4001654241_fadeIn 1s ease-out;
+     transform: scale(0.95);
+     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+     border: 2px solid;
+     color: #fff;
+ }
+ .login-box:hover {
+     transform: scale(1.05);
+ }
+ /* Login Title */
+ .login-title {
+     font-size: 24px;
+     font-weight: bold;
+     color: #ffffff;
+     margin-bottom: 20px;
+ }
+ .input-group {
+     display: flex;
+     align-items: center;
+     /* Vertically center items */
+     gap: 10px;
+     /* Space between icon and input field */
+     background-color: #eead4c;
+     border: 2px solid #9d4411;
+     border-radius: 8px;
+     margin-top: 8%;
+     padding: 5px 10px;
+     width: 100%;
+     max-width: 400px;
+     /* Adjust width as needed */
+ }
+ /* Input Labels */
+ .input-label .text {
+     font-size: 14px;
+     font-weight: bold;
+     color: #3e2723;
+     margin-bottom: 5px;
+     display: block;
+ }
+ .neon-input:focus {
+     border-color: #ff007f;
+     outline: none;
+     background: transparent;
+     /* Prevents hiding the icon */
+ }
+ .neon-icon {
+     font-size: 18px;
+     color: #3d0707e7;
+     /* Neon pink */
+     opacity: 0.8;
+ }
+ .neon-input {
+     background-color: white !important;
+     color: #333;
+     border: none;
+     flex-grow: 1;
+     padding: 8px;
+     outline: none;
+ }
+ #user-icon {
+     left: 15px;
+ }
+ #lock-icon {
+     left: 15px;
+ }
+ /* Button Styling */
+ .neon-button {
+     width: 100%;
+     padding: 12px;
+     font-size: 16px;
+     font-weight: bold;
+     border: none;
+     border-radius: 6px;
+     background: linear-gradient(90deg, #e11a34, #000445);
+     color: white;
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     margin-top: 20px;
+     /* Add margin on top */
+ }
+ .neon-button:hover {
+     background: linear-gradient(90deg, #b51f4a, #07014b);
+     box-shadow: 0 0 10px #FFD700;
+ }
+ .neon-button:disabled {
+     background: #d3a256;
+     cursor: not-allowed;
+ }
+ /* Error Messages */
+ .error-message {
+     color: red;
+     font-size: 12px;
+     margin-top: 5px;
+ }
+ ////////////////////////////MEMBER LOGIN/////////////////////////////
+ /// 
+ .login-page-Member-user {
+     position: fixed;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     background: url('/assets/images/MemberLogin.jpg') no-repeat center center/cover;
+     overflow: hidden;
+     justify-content: center;
+     width: 100%;
+ }
+ .register-link {
+     margin-top: 10px;
+     text-align: center;
+ }
+ .register-btn {
+     color: #00f0ff;
+     text-decoration: none;
+     font-weight: bold;
+     margin-left: 5px;
+ }
+ .register-btn:hover {
+     text-decoration: underline;
+ }
+ .footer {
+     background-color: #e67b34;
+     color: white;
+     text-align: center;
+     padding: 15px 0;
+     font-size: 14px;
+ }
+ .footer-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     max-width: 1000px;
+     margin: 0 auto;
+     flex-wrap: wrap;
+     /* Wrap if screen is small */
+ }
+ .footer {
+     bottom: 0;
+     padding: 19px 15px 20px;
+     position: relative;
+     right: 0;
+     color: #000000;
+     border-top: 1px solid #e2e7f1;
+     width: 68%;
+ }
+ .footer .contact,
+ .footer .email,
+ .footer .website {
+     margin: 5px 0;
+ }
+ .footer i {
+     margin-right: 5px;
+     color: #330000;
+ }
+ .footer a {
+     color: #330000;
+     text-decoration: none;
+     font-weight: bold;
+ }
+ .footer a:hover {
+     text-decoration: underline;
+ }
+ ////////////////////////////////////////////MEMBER & OFFICE //////////////////////////
+ .library-title {
+     font-weight: bold;
+     font-size: 22px;
+     color: white;
+     text-transform: uppercase;
+     background: linear-gradient(45deg, #ff7e5f, #feb47b);
+     /* Gradient background */
+     padding: 10px 20px;
+     border-radius: 30px;
+     /* Round shape */
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+     /* Soft shadow */
+     transition: all 0.3s ease-in-out;
+     text-align: center;
+     cursor: pointer;
+ }
+ /* Hover effect */
+ .library-title:hover {
+     background: linear-gradient(45deg, #feb47b, #ff7e5f);
+     /* Reverse gradient */
+     transform: scale(1.05);
+     /* Slightly enlarge */
+     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+ }
+ .home-button {
+     font-weight: bold;
+     font-size: 18px;
+     color: white;
+     text-transform: uppercase;
+     cursor: pointer;
+     position: relative;
+     transition: color 0.3s ease-in-out;
+ }
+ .home-button i {
+     margin-right: 5px;
+     /* Space between icon and text */
+ }
+ /* Hover effect: Blue underline */
+ .home-button::after {
+     content: "";
+     display: block;
+     width: 0;
+     height: 2px;
+     background-color: #007bff;
+     /* Blue underline */
+     transition: width 0.3s ease-in-out;
+     position: absolute;
+     left: 0;
+     bottom: -3px;
+ }
+ .home-button:hover {
+     color: #007bff;
+     /* Change text color on hover */
+ }
+ .home-button:hover::after {
+     width: 100%;
+     /* Expand underline on hover */
+ }
+ .forgot-password {
+     color: white;
+ }
+ .forgot-password:hover {
+     color: rgb(48, 159, 234);
+ }
+ .logo {
+     display: flex;
+     align-items: center;
+ }
+ .logo img {
+     width: 135px;
+     height: auto;
+     object-fit: contain;
+     color: white;
+     margin-top: 26px;
+ } 
+ .left-section {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+ }
+ .dropdown {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+ .mat-menu-item {
+     font-size: 14px;
+ }
+ button[mat-button] {
+     font-size: 16px;
+     font-weight: bold;
+     background-color: #a7470e;
+     color: white;
+     padding: 8px 16px;
+     border-radius: 5px;
+     text-transform: none;
+ }
+ button[mat-button]:hover {
+     background-color: #983800;
+ }
+ .about,
+ .whyReg {
+     cursor: pointer;
+ }
+ .fa-user-plus {
+     color: #3e2723;
+ }
+ @media (min-device-width: 280px) and (max-device-width: 700px) {
+     .login-box {
+         margin-left: -4%;
+         margin-bottom: -31%;
+     }
+     .navbar-both {
+         width: 100%;
+         background-color: #e7a84e;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         // padding: 10px 20px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 1000;
+         height: 13%;
+     }
+     .navbar-container-both {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         height: 95%;
+         // gap: 15px; /* Adds spacing between elements */
+     }
+     .logo img {
+         width: 115px;
+         /* Increased logo size */
+         height: auto;
+     }
+     .library-title {
+         font-size: 16px;
+         /* Slightly larger font */
+         font-weight: bold;
+         color: rgb(0, 0, 0);
+         text-align: center;
+         flex-grow: 1;
+         margin: 0 10px;
+         /* Adds space around title */
+         // white-space: nowrap; /* Prevents text from breaking */
+     }
+     .home-button {
+         font-size: 14px;
+         color: rgb(0, 0, 0);
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         /* Adds space between icon and text */
+         padding: 5px 10px;
+         border-radius: 5px;
+         transition: background 0.3s;
+     }
+     .home-button:hover {
+         background: rgba(255, 255, 255, 0.2);
+     }
+     .home-button i {
+         font-size: 16px;
+     }
+ }
+ @media (min-device-width: 701px) and (max-device-width: 1023px) {
+    .login-box {
+        margin-left: 25%;
+        margin-bottom: 20%;
+    }
+    /* Navbar - Ensure it uses Flexbox */
+    .navbar-container-both {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #e7a84e;
+        /* Brown background */
+        position: relative;
+    }
+    .navbar-both {
+        background-color: #e7a84e;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -3%;
+    }
+    /* Navbar container to align content */
+    .navbar-container-both {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 2%;
+        height: 95px;
+        /* Fixed height to prevent expansion */
+        overflow: hidden;
+        /* Prevent extra space */
+    }
+    .navbar-container-both span {
+        font-weight: bold;
+        color: #222;
+        /* Dark color */
+        font-size: 20px;
+        /* Adjust as needed */
+        text-transform: uppercase;
+        /* Optional: makes text uppercase */
+    }
+}
+ @media (min-device-width: 1024px) {
+     /* Navbar - Ensure it uses Flexbox */
+     .navbar-container-both {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 20px;
+         background-color: #e7a84e;
+         /* Brown background */
+         position: relative;
+     }
+     .navbar-both {
+         background-color: #e7a84e;
+         padding: 10px 20px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-top: -3%;
+     }
+     /* Navbar container to align content */
+     .navbar-container-both {
+         display: flex;
+         align-items: center;
+         width: 100%;
+         justify-content: space-between;
+         position: relative;
+         margin-top: 2%;
+         height: 95px;
+         /* Fixed height to prevent expansion */
+         overflow: hidden;
+         /* Prevent extra space */
+     }
+     .navbar-container-both span {
+         font-weight: bold;
+         color: #222;
+         /* Dark color */
+         font-size: 20px;
+         /* Adjust as needed */
+         text-transform: uppercase;
+         /* Optional: makes text uppercase */
+     }
+ }

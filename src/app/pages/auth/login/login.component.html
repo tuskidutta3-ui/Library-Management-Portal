@@ -1,0 +1,99 @@
+<div [ngClass]="getDynamicClass()">
+    <!-- <div class="overlay"></div> -->
+    <header class="navbar" *ngIf="!(userType === 'OfficeUser' || userType === 'MemberUser')">
+        <div class="navbar-container">
+            <!-- Left Section: Logo and Dropdown -->
+            <div class="left-section">
+                <!-- Logo -->
+                <a class="logo">
+                    <img src="assets/images/LOGO3.png" alt="Logo">
+                </a>
+                <!-- Our Services Dropdown (Better Styling) -->
+                <div class="dropdown">
+                    <button mat-button [matMenuTriggerFor]="servicesMenu">Our Services</button>
+                    <!-- Our Services Menu -->
+                    <mat-menu #servicesMenu="matMenu">
+                        <button mat-menu-item (click)="onServiceSelect('ebook')" [matMenuTriggerFor]="ebookMenu">
+                            📖 eBooks
+                        </button>
+                        <button mat-menu-item (click)="onServiceSelect('audiobook')">
+                            🎧 Audiobooks
+                        </button>
+                        <button mat-menu-item (click)="onServiceSelect('researchPaper')">
+                            📑 Research Papers
+                        </button>
+                    </mat-menu>
+                    <!-- eBook Submenu -->
+                    <mat-menu #ebookMenu="matMenu">
+                        <ng-container *ngIf="ebookCategories.length > 0; else noCategories">
+                            <button mat-menu-item *ngFor="let category of ebookCategories" [value]="category.ebookCode">
+                                {{ category.ebookCatName }}
+                            </button>
+                        </ng-container>
+                        <ng-template #noCategories>
+                            <button mat-menu-item disabled>Loading...</button>
+                        </ng-template>
+                    </mat-menu>
+                </div>
+                <div class="whyReg" (click)="openWhyRegDialog()">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="text-dark">Why Register?</span>
+                </div>
+            </div>
+            <!-- Profile Buttons -->
+            <div class="navbar-info-profile"> 
+                <button mat-icon-button class="profile-button office me-2"
+                    *ngIf=" userType !== 'OfficeUser' && userType !== 'MemberUser'" (click)="setUserType('OfficeUser')">
+                    <mat-icon class="login-icon">business_center</mat-icon>
+                    <span class="login-text">Office</span>
+                </button>
+                <button mat-icon-button class="profile-button Member"
+                    *ngIf=" userType !== 'OfficeUser' && userType !== 'MemberUser'" (click)="setUserType('MemberUser')">
+                    <mat-icon class="login-icon">person</mat-icon>
+                    <span class="login-text">Member</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div *ngIf="!(userType === 'OfficeUser' || userType === 'MemberUser')">
+        <section *ngIf="homeservice.isHeroVisible && slides.length > 0" class="hero-section" id="features-section">
+            <div *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlide" class="hero-slide">
+                <!-- Desktop Video -->
+                <video #desktopVideo autoplay muted loop playsinline preload="auto" class="fullscreen-video desktop-video">
+                    <source [src]="slide.desktopVideo" type="video/mp4">
+                </video>
+                <!-- Tablet Video -->
+                <video #tabletVideo autoplay muted loop playsinline preload="auto" class="fullscreen-video tablet-video">
+                    <source [src]="slide.tabletVideo" type="video/mp4">
+                </video>
+                <!-- Mobile Video -->
+                <video #mobileVideo autoplay muted loop playsinline preload="auto" class="fullscreen-video mobile-video">
+                    <source [src]="slide.mobileVideo" type="video/mp4">
+                </video>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="about" (click)="openAboutUsDialog()">
+                    <i class="fa-solid fa-users"></i>
+                    <span>About Us</span>
+                </div>
+                <div class="contact">
+                    <i class="fa fa-phone"></i>
+                    <span>Contact Us:</span>
+                    <a href="tel:7777777777">7777777777</a> <span class="text-dark">(9 A.M to 7 P.M.)</span>
+                </div>
+                <div class="email">
+                    <i class="fa fa-envelope"></i>
+                    <span>Email:</span>
+                    <a href="mailto:support&#64;bytereads.com.">support&#64;bytereads.com.</a>
+                </div>
+                <div class="website">
+                    <i class="fa fa-globe"></i>
+                    <span>Website:</span>
+                    <a href="https://www.bytereads.com" target="_blank">www.bytereads.com</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

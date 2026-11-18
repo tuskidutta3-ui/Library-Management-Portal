@@ -1,0 +1,56 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Item Search</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <!-- Table Section -->
+    <div class="card">
+        <div class="card-body">
+            <!-- Table Container with Scrollable Content -->
+            <div class="table-container">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                    <ng-container matColumnDef="select">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Select</mat-header-cell>
+                        <mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()" (change)="toggleSelection1(row)"
+                                [checked]="row.select"></mat-checkbox>
+                        </mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="Code">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Code</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.mem_Code}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input class="form-control" placeholder="Search by Code..." (keyup)="applyFilter('mem_Code', $event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Name">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Name</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.memName}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input class="form-control" placeholder="Search by Name..." (keyup)="applyFilter('memName', $event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Rate Column -->
+                    <ng-container matColumnDef="pMemCode">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Primary Mem Code</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.primaryMemCode}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input class="form-control" placeholder="Search by Name..." (keyup)="applyFilter('primaryMemCode', $event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Header, Rows, and Footer -->
+                    <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader" sticky></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </mat-row>
+                    <mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></mat-footer-row>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-loading></app-loading><!-- spinner -->
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal" (click)="okDialog()">OK</button>
+</div>

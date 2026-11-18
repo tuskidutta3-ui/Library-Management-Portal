@@ -1,1 +1,497 @@
-/* You can add global styles to this file, and also import other style files */
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($ilss-project-theme);
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($ilss-project-theme);
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'ngx-toastr/toastr';
+body {
+    background-color: #f3f4f7;
+}
+.page-title-box {
+    margin: 0 -12px 0;
+}
+a {
+    text-decoration: none;
+}
+.card {
+    /*border: 0px solid;*/
+    margin-bottom: 24px;
+}
+label {
+    font-weight: 500;
+}
+input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+}
+input.ng-valid {
+    border: 1px solid green;
+}
+textarea.ng-dirty.ng-invalid {
+    border: 1px solid red;
+}
+textarea.ng-valid {
+    border: 1px solid green;
+}
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+}
+.group-controler {
+    .input-group-control {
+        width: 25%;
+    }
+    .input-group-text {
+        width: 70%;
+    }
+    .input-group-controler {
+        width: 5%;
+        text-align: center;
+        background: #ccc;
+    }
+}
+.header-title {
+    font-size: 15px !important;
+    margin: 0 0 20px 0 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    // color: rgb(138, 13, 196) !important;
+}
+body .header-title {
+    font-size: 15px !important;
+    margin: 0 0 20px 0 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    // color: rgb(138, 13, 196) !important;
+}
+.modal {
+    background: rgb(0 0 0 / 23%);
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.pagination {
+    margin-top: 15px;
+}
+.ag-header-cell-text {
+    white-space: break-spaces;
+}
+.custom-button-color {
+    background-color: rgb(138, 13, 196) !important;
+    /* Text color */
+    border: none !important;
+    /* Optional: removes border if not needed */
+    color: #ffffff !important;
+}
+.custom-button-color:hover {
+    background-color: rgb(114, 6, 164);
+    /* Text color */
+    border: none;
+    /* Optional: removes border if not needed */
+    color: #ffffff;
+}
+.submit-button-color {
+    background-color: rgb(227, 189, 0) !important;
+    border: none !important;
+    color: #68086a !important;
+    font-weight: 500 !important;
+}
+.submit-button-color:hover {
+    background-color: rgb(233, 175, 3) !important;
+    /* Text color */
+    border: none !important;
+    /* Optional: removes border if not needed */
+    color: #68086a !important;
+}
+.suggestion-wrapper {
+    padding: 5px;
+    // width: calc(100% - 25px);
+    width: max-content;
+    z-index: 99;
+    top: 38px;
+    .list-group {
+        max-height: 210px;
+        overflow-y: auto;
+        .list-group-item {
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 500;
+            a {
+                color: #32363a;
+                &:hover {
+                    color: #0a58ca;
+                }
+            }
+        }
+    }
+    .view-more {
+        font-size: 10px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 7px 5px 0px;
+        color: #32363a;
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .close {
+        position: absolute;
+        right: 0;
+        padding: 0px 10px;
+        border: 1px solid #000;
+        cursor: pointer;
+        z-index: 1;
+        background: #CCC;
+    }
+}
+/******* Toggle ******/
+.toggle-container {
+    width: 52px;
+    height: 26px;
+    border: 2px solid #bebebe;
+    border-radius: 20px;
+    background: #e8f0fc;
+    margin-top: 7px;
+    .toggle-switch {
+        width: 100%;
+        height: 100%;
+        .toggle-switch-icon {
+            width: 20px;
+            height: 20px;
+            margin: 1px;
+            border-radius: 20px;
+            transform-origin: center;
+            transition: .4s;
+            background: #6edb8d;
+            transform: translate(0rem, 0rem) rotate(0deg);
+            &.inactive {
+                background: rgb(235, 63, 63);
+                transform: translate(25px, 0rem) rotate(180deg);
+            }
+            .toggle-switch-line-1,
+            .toggle-switch-line-2 {
+                position: absolute;
+                width: 16px;
+                height: 2px;
+                margin: 0rem;
+                border-radius: 0.2rem;
+                background: white;
+                transition: .4s;
+            }
+            .line-1x {
+                transform-origin: center;
+                transform: translate(2px, 9px) rotate(45deg);
+            }
+            .line-2x {
+                transform-origin: center;
+                transform: translate(2px, 9px) rotate(-45deg);
+            }
+            .line-1v {
+                width: 8px;
+                transform-origin: center;
+                transform: translate(1px, 11px) rotate(45deg);
+            }
+            .line-2v {
+                width: 15px;
+                transform-origin: center;
+                transform: translate(4px, 9px) rotate(-45deg);
+            }
+        }
+    }
+}
+/******* App Search *******/
+.app-search {
+    .form-control {
+        color: #343a40;
+        background-color: #f6f6f7;
+        border-color: #f6f6f7;
+    }
+    .btn {
+        background-color: #f6f6f7;
+        color: #696a6a;
+        &.input-restore {
+            // background: url(../../assets/images/restore.png);
+            background: url(../src/assets/images/restore.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 10px !important;
+        }
+    }
+}
+.ag-theme-alpine .ag-header-cell,
+.ag-theme-alpine .ag-header-group-cell {
+    padding: 0px 5px;
+}
+.ag-theme-alpine .ag-cell,
+.ag-theme-alpine .ag-full-width-row .ag-cell-wrapper.ag-row-group {
+    padding: 0px 5px;
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 600px;
+    }
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/******** Full Screen Dialog Box *********/
+.full-screen-modal {
+    max-width: unset !important;
+    width: 100%;
+    height: 100%;
+    .mat-dialog-container {
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100%;
+        width: 100%;
+        .mat-dialog-content {
+            // max-height: unset !important;
+            max-height: 83%;
+        }
+    }
+}
+.mat-row:hover {
+    background: rgb(238, 251, 255);
+}
+button {
+    border: none;
+    background: transparent;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.btn-custom-back {
+    background: linear-gradient(135deg, #f47104, #3d1701) !important;
+    /* Navy blue gradient */
+    border: none !important;
+    color: white !important;
+    font-size: 1rem !important;
+    padding: 0.7rem 1.5rem !important;
+    border-radius: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+.btn-custom-back:hover {
+    background: linear-gradient(135deg, #b1570c, #3d1701) !important;
+    cursor: pointer !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(197, 13, 13, 0.388) !important;
+}
+.btn-custom-back i {
+    font-size: 1.25rem !important;
+    transition: transform 0.2s !important;
+}
+.btn-custom-back:hover i {
+    transform: translateX(-3px) !important;
+}
+.btn-custom-back:focus {
+    outline: none !important;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.btn-custom-back:hover {
+    animation: pulse 0.5s infinite;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    /* or any other styling to indicate disabled state */
+}
+.app-search-box .input-group  {
+    border: 2px solid black; /* Add black border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: transparent; /* Keep it clean */
+}
+.app-search-box .form-control {
+    border: none;
+    /* Remove default input border */
+    box-shadow: none;
+    /* Remove any default shadow */
+}
+.app-search-box .btn {
+    border: none;
+    /* Remove button border */
+}
+////////////////////////////////////////////////////DARK MPDE UI/////////////////////////////////////////////////
+/* Light Mode Defaults */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --form-label-color: #333;
+    --border-color: #000000;
+    --navbar-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --card-body-bg: #ffffff;
+    --highlight-color: #4a0606;
+    --card-border: #e0e0e0;
+    --card-text: #333333;
+    --input-bg: #ffffff;
+    --dashboard-bg: #ffffff;
+    --dashboard-card-bg: #f5f5f5;
+    --btn-bg: #9d1e1e;
+    --btn-hover-bg: #6b1b1b;
+}
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-color: #333 !important;
+    ;
+    --text-color: #e0e0e0;
+    --form-label-color: #ffffff;
+    --border-color: #ffffff;
+    --navbar-bg: #1a1a1a;
+    --card-bg: #333 !important;
+    --card-body-bg: #333 !important;
+    --highlight-color: #ffffff;
+    --card-border: #ffffff;
+    --card-text: #ffffff;
+    --input-bg: #1a1a1a;
+    --dashboard-bg: #333 !important;
+    ;
+    /* Updated dark mode dashboard background (not black) */
+    --dashboard-card-bg: #333 !important;
+    ;
+    /* Slightly lighter dark gray */
+    --btn-bg: #c0392b;
+    --btn-hover-bg: #a93226;
+    --table-bg-color: #333 !important;
+    ;
+    table {
+        background-color: var(--table-bg-color);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+/* Form & Input Fields */
+input {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
+}
+/* Change Password Card */
+.change-password-card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
+}
+/* Labels */
+label.form-label {
+    color: var(--form-label-color);
+}
+/* Buttons */
+.btn-Pass {
+    background-color: var(--btn-bg);
+    color: white;
+    border: none;
+    transition: background 0.3s ease;
+}
+.btn-Pass:hover {
+    background-color: var(--btn-hover-bg);
+}
+/* Toggle Icon */
+.toggle-icon {
+    color: var(--text-color);
+}
+.toggle-icon:hover {
+    background-color: var(--highlight-color);
+}
+/* Apply Dark Mode Styles */
+.librarian-dashboard {
+    background-color: var(--dashboard-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+.card {
+    background-color: var(--card-body-bg);
+    /* Black in dark mode */
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card-body {
+    background-color: var(--card-body-bg);
+    /* Ensuring the card body matches */
+    color: var(--card-text);
+    padding: 20px;
+}
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: var(--dashboard-card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+/* Active Dashboard Card Effect */
+.dashboard-card.active {
+    background-color: #333 !important;
+    /* A distinct dark gray when active */
+    border: 1px solid var(--highlight-color);
+}
+/* Apply variables to elements */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+body {
+    color: var(--text-color);
+}
+.profile-section p {
+    color: var(--text-color);
+}
+/* Ensuring Text in Dark Mode */
+h3,
+p {
+    color: var(--text-color);
+}
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 700;
+}
+ 

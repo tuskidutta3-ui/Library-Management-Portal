@@ -1,0 +1,73 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Book Code Search Helper</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="app-search-box dropdown app-search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="top-search"
+                            [(ngModel)]="searchString" (keydown.enter)="searchResult()">
+                        <button class="btn input-group-text" type="submit" (click)="searchResult()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button class="btn input-restore" type="submit" (click)="restoreResult()"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block overflow-auto">
+                <div class="table-responsive"  *ngIf="isDataLoaded && dataSource?.length > 0">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                        <ng-container matColumnDef="bookCode">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Code</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.bookCode}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="mastBookName">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Name</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.mastBookName}}</mat-cell>
+                        </ng-container>
+                         <ng-container matColumnDef="mastBookAuthPubName">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Publisher/Author</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.mastBookAuthPubName}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="action">
+                            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <button mat-icon-button class="glass-button" (click)="selectRow(element)">
+                                    <mat-icon>done</mat-icon>
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader" sticky></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </table>
+                </div>
+                  <!-- ❌ NO DATA (only after load) -->
+                <ng-container *ngIf="isDataLoaded && dataSource?.length === 0">
+                    <ng-template [ngTemplateOutlet]="noDataTemplate"></ng-template>
+                </ng-container>
+            </div>
+              <!-- ❌ NO DATA FOUND -->
+            <ng-template #noDataTemplate>
+                <div class="text-center p-5">
+                    <mat-icon style="font-size: 50px; color: #cfcfcf;">
+                        search_off
+                    </mat-icon>
+                    <h5 class="mt-2 text-muted">No Record Found</h5>
+                    <p class="text-muted mb-0">
+                        Try changing your search or filter criteria
+                    </p>
+                </div>
+            </ng-template>
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="collectionSize" [maxSize]="2"
+                [rotate]="true" [boundaryLinks]="true" [ellipses]="false" (pageChange)="onPaginationClick($event)">
+            </ngb-pagination>
+        </div>
+    </div>
+<app-loading></app-loading><!-- spinner -->
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="primary" class="btn btn-primary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

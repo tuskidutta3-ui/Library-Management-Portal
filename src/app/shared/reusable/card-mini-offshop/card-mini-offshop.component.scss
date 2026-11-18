@@ -1,0 +1,155 @@
+.scrollable-form {
+    max-height: 100vh;
+    /* Adjust height as needed */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+}
+.mat-table {
+    width: 100%;
+    max-width: 100%;
+    // margin-bottom: 1rem;
+    display: table;
+    border-collapse: collapse;
+    margin: 0px;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+}
+.tableHeader {
+    background-color: rgb(251, 251, 251);
+}
+.upload-section,
+.upload-section-sig {
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensure the button stays at the bottom */
+}
+.upload-section:hover,
+.upload-section-sig:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Photo Upload Styling */
+#photoUpload {
+    width: 153px;
+    height: 153px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    box-sizing: border-box;
+}
+/* Button Customization for Upload */
+.btn-upload,
+.btn-upload-signature {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+}
+.btn-upload:hover,
+.btn-upload-signature:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Signature Upload Button Styling */
+.btn-upload,
+.btn-upload-signature {
+    width: 75%;
+}
+/* Footer Styling for Signature Card */
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: none;
+}
+/* Hide file input */
+input[type="file"].d-none {
+    display: none;
+}
+@media (min-device-width: 280px) and (max-device-width: 700px) {
+    .adjust {
+        margin-top: 16px;
+    }
+}
+@media (min-device-width: 701px) and (max-device-width: 1023px) {
+    .adjust1 {
+        margin-top: 16px;
+    }
+    .photoadjust {
+        display: flex;
+        justify-content: center;
+    }
+    .margin1 {
+        margin-top: 10px;
+    }
+    .mat-column-primary {
+        padding-left: 1%;
+        flex: 0 0 20%;
+    }
+    .mat-column-date {
+        flex: 0 0 20%;
+    }
+    .mat-column-lockNo {
+        flex: 0 0 20%;
+    }
+    .mat-column-loc {
+        flex: 0 0 20%;
+    }
+    .mat-column-type {
+        flex: 0 0 20%;
+    }
+    .mat-column-rent {
+        flex: 0 0 20%;
+    }
+    .mat-column-tax {
+        flex: 0 0 20%;
+    }
+    .mat-column-oldNo {
+        flex: 0 0 20%;
+    }
+    .mat-column-remarks {
+        flex: 0 0 20%;
+    }
+    .mat-column-delete {
+        flex: 0 0 10%;
+    }
+}
+@media (min-device-width: 1024px) {
+    .mat-column-primary {
+        padding-left: 1%;
+        flex: 0 0 10%;
+    }
+    .mat-column-date {
+        flex: 0 0 10%;
+    }
+    .mat-column-lockNo {
+        flex: 0 0 10%;
+    }
+    .mat-column-loc {
+        flex: 0 0 10%;
+    }
+    .mat-column-type {
+        flex: 0 0 10%;
+    }
+    .mat-column-rent {
+        flex: 0 0 10%;
+    }
+    .mat-column-tax {
+        flex: 0 0 10%;
+    }
+    .mat-column-oldNo {
+        flex: 0 0 10%;
+    }
+    .mat-column-remarks {
+        flex: 0 0 15%;
+    }
+    .mat-column-delete {
+        flex: 0 0 5%;
+    }
+}

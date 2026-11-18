@@ -1,0 +1,140 @@
+<div mat-dialog-title
+    [ngClass]="{ 'void-dialog-title': dialogType === 'Void', 'regenerate-dialog-title': dialogType !== 'Void' }">
+    {{ dialogType === 'Void' ? 'Bill Register For Void' : dialogType === 'Other' ? 'Bill Register For Void' :'Bill
+    Register For Regenerate' }}
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <form [formGroup]="editBillDisplay" class="mat-form-field">
+        <div class="col-12 col-md-12 col-xl-12">
+            <div class="card rounded border-2">
+                <div class="card-body bg-light">
+                    <div class="row mt-3">
+                        <div class="col-md-8 col-xl-4">
+                            <div class="row">
+                                <label for="mem_Code" class="form-label col-md-5 col-xl-4">Void Reason
+                                </label>
+                                <div class="col-md-7 col-xl-8">
+                                    <select id="recBy" class="form-select" formControlName="reason">
+                                        <option value=''>Select</option>
+                                        @for (rea of ReasonList; track $index) {
+                                        <option [value]="rea.id">{{rea.reason}}</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xl-4">
+                            <div class="row">
+                                <label for="userName" class="form-label col-md-5 col-xl-3">User
+                                </label>
+                                <div class="col-md-7 col-xl-9">
+                                    <input type="text" class="form-control" id="userName" formControlName="userName"
+                                        autocomplete="off" placeholder="user">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xl-4">
+                            <div class="row">
+                                <label for="userPW" class="form-label col-md-5 col-xl-4">Password
+                                </label>
+                                <div class="col-md-7 col-xl-8">
+                                    <input type="password" class="form-control" id="userPW" formControlName="userPW"
+                                    autocomplete="new-password"  placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Table Section -->
+    <div class="card">
+        <div class="card-body">
+            <!-- Table Container with Scrollable Content -->
+            <div class="table-container">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                    <!-- Bill No Column -->
+                    <ng-container matColumnDef="billno">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Bill No</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.billNo}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input type="search" class="search-input" placeholder="Search by Bill No..."
+                                [(ngModel)]="searchStringBillNo" (input)="onSearchInputBillNo($event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Order No. Column -->
+                    <ng-container matColumnDef="orderno">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Order No.</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.orderNo}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input #searchInputOrderNo type="search" class="search-input"
+                                placeholder="Search by Order No..." [(ngModel)]="searchStringOrderNo"
+                                (input)="onSearchInputOrderNo($event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Code</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.mem_Code}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input type="search" class="search-input" placeholder="Search by Code..."
+                                [(ngModel)]="searchStringCode" (input)="onSearchInputCode($event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Member Column -->
+                    <ng-container matColumnDef="member">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Member</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input type="search" class="search-input" placeholder="Search by Member..."
+                                [(ngModel)]="searchStringMember" (input)="onSearchInputMember($event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Waiter Column -->
+                    <ng-container matColumnDef="waiter">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Waiter</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.waiterName}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input type="search" class="search-input" placeholder="Search by Waiter..."
+                                [(ngModel)]="searchStringWaiter" (input)="onSearchInputWaiter($event)">
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Amount Column -->
+                    <ng-container matColumnDef="amount">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Amount</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.totalNet_AfterRo}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Cancel Column -->
+                    <ng-container matColumnDef="cancel">
+                        <mat-header-cell *matHeaderCellDef>Cancel</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-menu-item (click)="selectRow(element)" (click)="onCancel(element)"
+                                class="cancel-btn">
+                                <div class="action-button">
+                                    <svg class="cancel-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 18L18 6M6 6l12 12" stroke="#FF5722" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Header, Rows, and Footer -->
+                    <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader" sticky></mat-header-row>
+                    <!-- Table Row -->
+                    <mat-row *matRowDef="let row; columns: displayedColumns;" (mouseenter)="onRowHover(row)"
+                        [ngClass]="{'hovered-row': row === selectedRow}" tabindex="0">
+                    </mat-row>
+                    <mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></mat-footer-row>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

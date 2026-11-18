@@ -1,0 +1,11 @@
+    .custom-disabled:disabled {
+        opacity: 0.5; /* Makes it look faded */
+        cursor: not-allowed; /* Shows the user that it's disabled */
+        background-color: #e9ecef; /* Slightly grey background */
+        filter: grayscale(50%); /* Adds a bit of grayscale effect */
+    }
+    @media (min-device-width: 1024px) {
+    .add-button{
+        margin-top: 3%
+    }
+    }

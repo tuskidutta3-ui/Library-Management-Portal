@@ -1,0 +1,70 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Member Search</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="app-search-box dropdown app-search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="top-search"
+                            [(ngModel)]="searchString" (keydown.enter)="searchResult()">
+                        <button class="btn input-group-text" type="submit" (click)="searchResult()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button class="btn input-restore" type="submit" (click)="restoreResult()"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block overflow-auto">
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                        <ng-container matColumnDef="mem_Code">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Member Code</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.mem_Code}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="primary_Mem_Code">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Primary Mem Code</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.primary_Mem_Code}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="mem_Type">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Member Type</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.mem_Type}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="memberName">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Member Name</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.memberName}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="memberType">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Member Type</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.memberType}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Action">
+                            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <button mat-menu-item (click)="selectRow(element)">
+                                    <div
+                                        style="display: flex; align-items: center; border: 3px solid #4CAF50; border-radius: 3px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 12l4 4L19 7" stroke="#4CAF50" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </table>
+                </div>
+            </div>
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="collectionSize" [maxSize]="2"
+                [rotate]="true" [boundaryLinks]="true" [ellipses]="false" (pageChange)="onPaginationClick($event)">
+            </ngb-pagination>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

@@ -1,0 +1,641 @@
+.hero-slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+.hero-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+.prev {
+    left: 20px;
+}
+.next {
+    right: 20px;
+}
+/* Buttons inside the navbar */
+.profile-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.profile-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+/* Align Buttons to Top Right */
+.navbar-info-profile {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    /* Space between buttons */
+}
+/* Common Button Styling */
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    color: #8B4513;
+    /* Brown text color */
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 5%;
+}
+.profile-button mat-icon {
+    font-size: 20px;
+    color: #8B4513;
+}
+/* Hover Effect */
+.profile-button:hover {
+    background: #8B4513;
+    color: white;
+}
+.profile-button:hover mat-icon {
+    color: white;
+}
+////////////////////////////////////////////MEMBER & OFFICE //////////////////////////
+/* Navbar - Ensure it uses Flexbox */
+.navbar-container-both {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e7a84e;
+    /* Brown background */
+    position: relative;
+}
+/* Align Buttons to Top Right */
+.navbar-info-profile-both {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    /* Space between buttons */
+}
+.navbar-both {
+    background-color: #e7a84e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.library-title {
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    /* Gradient background */
+    padding: 10px 20px;
+    border-radius: 30px;
+    /* Round shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+/* Hover effect */
+.library-title:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    /* Reverse gradient */
+    transform: scale(1.05);
+    /* Slightly enlarge */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+.home-button {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+.home-button i {
+    margin-right: 5px;
+    /* Space between icon and text */
+}
+/* Hover effect: Blue underline */
+.home-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    /* Blue underline */
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+.home-button:hover {
+    color: #007bff;
+    /* Change text color on hover */
+}
+.home-button:hover::after {
+    width: 100%;
+    /* Expand underline on hover */
+}
+/* Navbar container to align content */
+.navbar-container-both {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 2%;
+}
+.navbar-container-both span {
+    font-weight: bold;
+    color: #222;
+    /* Dark color */
+    font-size: 20px;
+    /* Adjust as needed */
+    text-transform: uppercase;
+    /* Optional: makes text uppercase */
+}
+.forgot-password {
+    color: white;
+}
+.forgot-password:hover {
+    color: rgb(48, 159, 234);
+}
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mat-menu-item {
+    font-size: 14px;
+}
+button[mat-button] {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #7a0b0b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-transform: none;
+}
+button[mat-button]:hover {
+    background-color: #7b1210;
+}
+.about,
+.whyReg {
+    cursor: pointer;
+}
+.fa-user-plus {
+    color: #3e2723;
+}
+@media (min-device-width: 280px) and (max-device-width: 700px) {
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .logo img {
+        width: 135px;
+        height: auto;
+        object-fit: contain;
+        color: white;
+        margin-top: 11%;
+    }
+    .mobile-video {
+        display: block !important;
+        /* Force show on mobile */
+    }
+    .hero-section {
+        position: relative;
+        width: 100%;
+        // height: 100vh;
+        /* Full viewport height */
+        overflow: hidden;
+    }
+    .fullscreen-video {
+        width: 100%;
+        height: 100vh;
+        /* Limit height to half the screen */
+        object-fit: cover;
+        position: fixed;
+        /* Fix video so it doesn't push content */
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: none;
+        /* Hide by default */
+    }
+    /* Ensure the main content and footer fit the screen */
+    body,
+    html {
+        height: 100vh;
+        overflow: hidden;
+        /* Prevent scrolling */
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar {
+        position: absolute;
+        width: 100%;
+    }
+    /* Main content should take up the rest of the screen */
+    .main-content {
+        flex: 1;
+        // overflow-y: auto; /* Allow scrolling only for main content if needed */  
+    }
+    /* Navbar Styling */
+    .navbar {
+        background-color: #e7a84e;
+        /* Brown color */
+        // padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+    }
+    /* Navbar - Ensure it uses Flexbox */
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: 10px 20px;
+        background-color: #e7a84e;
+        /* Brown background */
+        position: relative;
+        width: 100%;
+        height: 131px;
+        /* Fixed height to prevent expansion */
+        overflow: hidden;
+        /* Prevent extra space */
+    }
+    .navbar-info-profile {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        // display: flex;
+        // flex-direction: column;
+        gap: 10px;
+        /* Space between buttons */
+        margin-top: 14%;
+    }
+    .left-section {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10%;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e67b34;
+        color: white;
+        text-align: center;
+        padding: 10px 5px; /* Reduce padding for smaller screens */
+        font-size: 12px; /* Smaller font size for better fit */
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        gap: 8px; /* Add spacing between stacked items */
+        text-align: center;
+    }
+    .footer-content > div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+    }
+    .footer a {
+        font-size: 12px; /* Adjust link text size */
+    }
+    .footer i {
+        color: #330000;
+    }
+    .footer a {
+        color: #330000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+}
+@media (min-device-width: 701px) and (max-device-width: 1023px) {
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .logo img {
+        width: 135px;
+        height: auto;
+        object-fit: contain;
+        color: white;
+        margin-top: 15px;
+    }
+    .fullscreen-video {
+        width: 100%;
+        height: 100vh;
+        /* Limit height to half the screen */
+        object-fit: cover;
+        position: fixed;
+        /* Fix video so it doesn't push content */
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: none;
+        /* Hide by default */
+    }
+    /* Ensure the main content and footer fit the screen */
+    body,
+    html {
+        height: 100vh;
+        overflow: hidden;
+        /* Prevent scrolling */
+        display: flex;
+        flex-direction: column;
+    }
+    /* Main content should take up the rest of the screen */
+    .main-content {
+        flex: 1;
+        // overflow-y: auto; /* Allow scrolling only for main content if needed */  
+    }
+    .tablet-video {
+        display: block !important;
+        /* Force show on mobile */
+    }
+    .hero-section {
+        position: relative;
+        width: 100%;
+        // height: 100vh;
+        /* Full viewport height */
+        overflow: hidden;
+    }
+    /* Navbar Styling */
+    .navbar {
+        background-color: #e7a84e;
+        /* Brown color */
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+    }
+    /* Navbar - Ensure it uses Flexbox */
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #e7a84e;
+        /* Brown background */
+        position: relative;
+        width: 100%;
+        height: 80px;
+        /* Fixed height to prevent expansion */
+        overflow: hidden;
+        /* Prevent extra space */
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e67b34;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+    }
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap; /* Wrap to next line if needed */
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        width: 100%;
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-content > div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+    }
+    .footer i {
+        color: #330000;
+    }
+    .footer a {
+        color: #330000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+}
+@media (min-device-width: 1024px) { 
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .logo img {
+        width: 135px;
+        height: auto;
+        object-fit: contain;
+        color: white;
+        margin-top: 15px;
+    }
+    .fullscreen-video {
+        width: 100%;
+        height: 93%;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: none;
+        /* Hide all videos by default */
+    }
+    .desktop-video {
+        display: block !important;
+        /* Force show on mobile */
+    }
+    .hero-section {
+        position: relative;
+        width: 100%;
+        // height: 100vh;
+        /* Full viewport height */
+        overflow: hidden;
+    }
+    /* Navbar Styling */
+    .navbar {
+        background-color: #e7a84e;
+        /* Brown color */
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+    }
+    /* Navbar - Ensure it uses Flexbox */
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #e7a84e;
+        /* Brown background */
+        position: relative;
+        width: 100%;
+        height: 80px;
+        /* Fixed height to prevent expansion */
+        overflow: hidden;
+        /* Prevent extra space */
+    }
+    .footer {
+        position: fixed; /* Stick to the bottom */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e67b34;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 14px;
+        border-top: 1px solid #e2e7f1;
+        z-index: 1000;
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between; /* Space between elements */
+        align-items: center;
+        max-width: 1200px; /* Set a max width for alignment */
+        width: 100%;
+        flex-wrap: nowrap; /* Keep items in a single line */
+        gap: 20px; /* Add spacing between items */
+    }
+    .footer-content > div {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Spacing between icon and text */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    .footer i {
+        color: #330000;
+    }
+    .footer a {
+        color: #330000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    /* Ensure the layout fits the screen properly */
+    body, html {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Prevent scrolling */
+    }
+    .main-content {
+        flex: 1;
+        // overflow-y: auto; /* Allow scrolling only for main content */
+    }
+}

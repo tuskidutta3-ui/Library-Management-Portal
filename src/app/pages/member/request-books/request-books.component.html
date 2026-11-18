@@ -1,0 +1,255 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <button
+          class="btn btn-custom-back"
+          (click)="goBack()"
+          aria-label="Go back"
+        >
+          <i class="fas fa-chevron-left"></i>
+          <span class="ms-2 d-none d-md-inline">Back</span>
+        </button>
+        <div class="page-title-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="head-elements-position mb-3">
+        <h6 class="header-title mb-0" style="color: brown">Request Books</h6>
+        <div class="app-search-box dropdown app-search">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              id="top-search"
+              [(ngModel)]="searchString"
+              (keydown.enter)="searchResult()"
+            />
+            <button
+              class="btn input-group-text"
+              type="submit"
+              (click)="searchResult()"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+            <button
+              class="btn input-restore"
+              type="submit"
+              (click)="restoreResult()"
+            ></button>
+          </div>
+        </div>
+        <span class="buttons marginP button-display">
+          <button
+            type="button"
+            class="btn btn-add-button"
+            (click)="addNewBooks()"
+          >
+            Request Books
+          </button>
+        </span>
+      </div>
+      <div class="d-block overflow-auto">
+        <div class="table-responsive">
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            class="mat-elevation-z8 demo-table"
+          >
+            <ng-container matColumnDef="bookCode">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Book Code</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.mastBookCode
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="bookName">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Book Name</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.mastBookName
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="authName">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Author/Publisher Name</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.mastBookAuthPubName
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="issueStatus">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Request Status</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">
+                <span
+                  class="status-badge"
+                  [ngClass]="{
+                    'status-pending': element.reqStatus === 'P',
+                    'status-approve': element.reqStatus === 'A',
+                    'status-reject': element.reqStatus === 'R',
+                  }"
+                >
+                  {{
+                    element.reqStatus == "P"
+                      ? "Pending"
+                      : element.reqStatus == "A"
+                        ? "Approved"
+                        : "Rejected"
+                  }}
+                </span>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="reqDate">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Req Date</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.requestDt | date: "dd/MMM/yyyy"
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="duedate">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Due Date</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.currentDueDt | date: "dd/MMM/yyyy"
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="rejectreason">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Reject Reason</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.remarks
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="view">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >View</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">
+                <a (click)="viewData(element)">
+                  <img
+                    src="/assets/images/view-removebg-preview.png"
+                    width="30"
+                    height="30"
+                  />
+                </a>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Edit">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Edit</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">
+                <a
+                  *ngIf="element.reqStatus === 'P'; else disableEdit"
+                  (click)="edit(element)"
+                >
+                  <img
+                    src="/assets/images/icon_edit.png"
+                    width="20"
+                    height="20"
+                  />
+                </a>
+                <ng-template #disableEdit>
+                  <img
+                    src="/assets/images/icon_edit.png"
+                    width="20"
+                    height="20"
+                    style="opacity: 0.4; cursor: not-allowed"
+                    title="Approved or Rejected request cannot be edited"
+                  />
+                </ng-template>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Status">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Status</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">
+                <ng-container
+                  *ngIf="element.reqStatus === 'P'; else disableStatusToggle"
+                >
+                  <a
+                    class="mr-2"
+                    *ngIf="element.activate === 'I'; else toggleInactive"
+                    (click)="onToggleData(element)"
+                  >
+                    <div class="toggle-container">
+                      <div class="toggle-switch">
+                        <div class="toggle-switch-icon inactive">
+                          <div class="toggle-switch-line-1 line-1x"></div>
+                          <div class="toggle-switch-line-2 line-2x"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <ng-template #toggleInactive>
+                    <a class="mr-2" (click)="onToggleData(element)">
+                      <div class="toggle-container">
+                        <div class="toggle-switch">
+                          <div class="toggle-switch-icon">
+                            <div class="toggle-switch-line-1 line-1v"></div>
+                            <div class="toggle-switch-line-2 line-2v"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ng-template>
+                </ng-container>
+                <ng-template #disableStatusToggle>
+                  <div
+                    class="toggle-container"
+                    style="opacity: 0.4; cursor: not-allowed"
+                    title="Approved or Rejected request status cannot be changed"
+                  >
+                    <div class="toggle-switch">
+                      <div
+                        class="toggle-switch-icon"
+                        *ngIf="element.activate !== 'I'; else disabledInactive"
+                      >
+                        <div class="toggle-switch-line-1 line-1v"></div>
+                        <div class="toggle-switch-line-2 line-2v"></div>
+                      </div>
+                      <ng-template #disabledInactive>
+                        <div class="toggle-switch-icon inactive">
+                          <div class="toggle-switch-line-1 line-1x"></div>
+                          <div class="toggle-switch-line-2 line-2x"></div>
+                        </div>
+                      </ng-template>
+                    </div>
+                  </div>
+                </ng-template>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns"
+              class="tableHeader"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          </table>
+        </div>
+      </div>
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="collectionSize"
+        [maxSize]="2"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="onPaginationClick($event)"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
+  <app-loading></app-loading
+  ><!-- spinner -->
+</div>

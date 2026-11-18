@@ -1,0 +1,1124 @@
+/* General styling */
+.home-page-container {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+// .uppercase-text {
+//     text-transform: uppercase;
+// }
+// /* Navbar styling */
+// .navbar {
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     background: rgb(221 191 0);
+//     padding: 15px 30px;
+//     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+//     z-index: 1000;
+// }
+// /* Adjusting container and logo for flexibility */
+// .logo img {
+//     height: 70px;
+//     object-fit: contain;
+// }
+// /* Navbar container */
+// .navbar-container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+// }
+// /* Center the navigation links */
+// .nav-links {
+//     display: flex;
+//     gap: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+// /* Right-align the user info and profile */
+// .navbar-info-profile {
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;
+//     margin-left: auto;
+//     color: #8c0aa2;
+//     font-weight: 500;
+// }
+// .navbar-info {
+//     display: flex;
+//     flex-direction: row;
+//     /* Changed from column to row */
+//     align-items: center;
+//     /* Align them vertically */
+//     gap: 15px;
+//     /* Space between Fin Year and User */
+//     text-align: right;
+// }
+// .profile-button {
+//     margin-left: 10px;
+//     margin-top: 8px;
+// }
+// .nav-links a:first-child {
+//     margin-left: 20px;
+// }
+// .nav-links a {
+//     color: #8c00af;
+//     font-size: 15px;
+//     text-decoration: none;
+//     font-weight: 500;
+//     transition: color 0.3s ease;
+// }
+// .nav-links a:hover {
+//     color: #f90;
+// }
+// /* Marquee in the center of the navbar */
+// .ilss-marquee {
+//     flex: 2;
+//     /* Allow this to take up more space */
+//     text-align: center;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     padding: 10px 0;
+//     color: #7807c7;
+//     font-size: 18px;
+//     font-weight: bold;
+//     margin: 0 50px;
+//     /* Add space between logo and financial year */
+// }
+// .ilss-marquee span {
+//     display: inline-block;
+//     animation: marquee 15s linear infinite;
+// }
+// @keyframes marquee {
+//     0% {
+//         transform: translateX(100%);
+//     }
+//     100% {
+//         transform: translateX(-100%);
+//     }
+// }
+// .custom-menu {
+//     min-width: 200px;
+// }
+// .menu-icon {
+//     font-size: 20px;
+//     margin-right: 10px;
+// }
+// .nav-actions .btn-login,
+// .nav-actions .btn-signup {
+//     padding: 10px 20px;
+//     border-radius: 5px;
+//     font-size: 14px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+//     border: none;
+// }
+// .btn-login {
+//     background: transparent;
+//     color: #fff;
+//     border: 1px solid white;
+// }
+// .btn-login:hover {
+//     background: #f90;
+//     color: #fff;
+// }
+// .btn-signup {
+//     background-color: #f90;
+//     color: #fff;
+// }
+// .btn-signup:hover {
+//     background-color: #d87d0a;
+// }
+// /* Hero Section */
+// .hero-section {
+//     height: 90vh;
+//     background: linear-gradient(120deg, #6200ea, #03a9f4);
+//     color: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     padding: 0 30px;
+// }
+// .hero-content h1 {
+//     font-size: 58px;
+//     margin-bottom: 20px;
+//     font-weight: 700;
+//     line-height: 1.2;
+// }
+// .hero-content p {
+//     font-size: 20px;
+//     margin-bottom: 40px;
+// }
+// .hero-content .btn-primary {
+//     padding: 15px 40px;
+//     background-color: white;
+//     color: #6200ea;
+//     border-radius: 5px;
+//     font-size: 18px;
+//     font-weight: 600;
+//     border: none;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+// }
+// .hero-content .btn-primary:hover {
+//     background-color: #e0e0e0;
+// }
+// /* Features Section */
+// .features-section {
+//     padding: 80px 40px;
+//     background-color: #f9f9f9;
+// }
+// .features-grid {
+//     display: flex;
+//     justify-content: space-around;
+// }
+// .feature-card {
+//     background: white;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+//     padding: 40px;
+//     text-align: center;
+//     width: 30%;
+//     transition: transform 0.3s;
+// }
+// .feature-card:hover {
+//     transform: translateY(-10px);
+// }
+// .feature-icon {
+//     font-size: 40px;
+//     color: #6200ea;
+//     margin-bottom: 20px;
+// }
+// .feature-card h3 {
+//     font-size: 22px;
+//     margin-bottom: 10px;
+// }
+// .feature-card p {
+//     font-size: 16px;
+//     color: #777;
+// }
+// /* Adjust responsiveness */
+// @media (max-width: 768px) {
+//     .navbar-container {
+//         flex-direction: column;
+//     }
+//     .nav-links {
+//         flex-direction: column;
+//         margin-top: 10px;
+//     }
+//     .nav-actions {
+//         margin-top: 10px;
+//     }
+//     .hero-content h1 {
+//         font-size: 36px;
+//     }
+//     .hero-content p {
+//         font-size: 16px;
+//     }
+//     .features-grid {
+//         flex-direction: column;
+//         gap: 20px;
+//     }
+//     .footer-content {
+//         flex-direction: column;
+//         gap: 20px;
+//     }
+// }
+// .hero-section {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     overflow: hidden;
+//     height: 90vh;
+//     background: #000;
+//     /* Fallback color */
+// }
+// .hero-slideshow {
+//     display: flex;
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+// }
+// .hero-slide {
+//     display: flex;
+//     width: 100%;
+//     height: 80%;
+//     position: absolute;
+//     transition: opacity 2s ease-in-out;
+//     opacity: 0;
+// }
+// .hero-slide.active {
+//     opacity: 1;
+// }
+// .hero-content {
+//     width: 40%;
+//     padding: 50px;
+//     color: #fff;
+//     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+// }
+// .hero-content h1 {
+//     font-size: 2.5em;
+//     margin-bottom: 10px;
+// }
+// .hero-content p {
+//     font-size: 1.2em;
+//     margin-bottom: 20px;
+// }
+// .btn-primary {
+//     padding: 10px 20px;
+//     background-color: #007bff;
+//     color: #fff;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+// }
+// .hero-image {
+//     width: 60%;
+//     height: 100%;
+//     overflow: hidden;
+// }
+// .hero-image img {
+//     width: 100%;
+//     height: 451px;
+//     margin-top: 146px;
+//     object-fit: cover;
+//     animation: slide-in 2s ease-in-out;
+// }
+// @keyframes slide-in {
+//     from {
+//         transform: translateX(100%);
+//     }
+//     to {
+//         transform: translateX(0);
+//     }
+// }
+// .nav-button {
+//     position: absolute;
+//     top: 50%;
+//     background: rgba(0, 0, 0, 0.5);
+//     border: none;
+//     color: white;
+//     font-size: 2em;
+//     cursor: pointer;
+//     padding: 10px;
+//     z-index: 100;
+// }
+// .prev {
+//     left: 10px;
+// }
+// .next {
+//     right: 10px;
+// }
+// .master-menu {
+//     .mat-menu-item {
+//         display: flex;
+//         align-items: center;
+//     }
+//     .menu-icon {
+//         margin-right: 8px;
+//     }
+// }
+// .mat-menu-tree-container {
+//     max-height: 300px;
+//     /* Adjust based on your needs */
+//     overflow: auto;
+//     padding: 10px;
+// }
+// .master-tree {
+//     font-size: 14px;
+//     /* Adjust based on your design */
+// }
+// .menu-button {
+//     width: 100%;
+//     text-align: left;
+// }
+// .tree-node-button {
+//     width: 100%;
+//     text-align: left;
+// }
+// .menu-icon {
+//     margin-right: 8px;
+// }
+// /* Add a top margin to the sections below the navbar */
+// .hero-section,
+// .component-section {
+//     margin-top: 10px;
+//     /* Adjust this value to the height of your navbar */
+// }
+// .navbar {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     z-index: 1000;
+//     /* Ensure it's on top of other elements */
+// }
+// .feature-card {
+//     padding: 16px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     margin: 16px 0;
+// }
+// .feature-button {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+// }
+// .menu-icon {
+//     margin-left: 8px;
+// }
+// ////////////////////////////////////////////// Dynamic Button ////////////////////////////////////////////////////////
+// .features-section {
+//     padding: 20px;
+//     background-color: #f5f5f5;
+//     /* Soft background for the section */
+// }
+// .custom-animated-button {
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     padding: 12px 24px;
+//     border-radius: 50px;
+//     /* Rounded corners */
+//     background-color: #222;
+//     /* Dark background for contrast */
+//     color: #fcd200;
+//     /* Neon text color */
+//     font-size: 16px;
+//     /* Font size */
+//     // box-shadow: 0 0 10px rgba(0, 255, 153, 0.8),
+//     //     /* Neon glow */
+//     //     0 0 20px rgba(0, 255, 153, 0.5);
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+//     border: none;
+//     /* Remove default border */
+//     cursor: pointer;
+//     /* Change cursor to pointer */
+// }
+// .custom-animated-button:hover {
+//     transform: scale(1.05);
+//     /* Slightly enlarge on hover */
+//     // box-shadow: 0 0 20px rgba(0, 255, 153, 1),
+//     //     /* Brighter neon glow */
+//     //     0 0 30px rgba(0, 255, 153, 0.8);
+// }
+// .menu-icon {
+//     margin-right: 12px;
+//     /* Space between icon and text */
+//     font-size: 26px;
+//     /* Increased icon size */
+//     color: #00ff99;
+//     /* Neon icon color */
+//     transition: transform 0.3s;
+//     /* Smooth transition for icon */
+// }
+// .custom-animated-button:hover .menu-icon {
+//     transform: rotate(10deg);
+//     /* Slight rotation effect on hover */
+// }
+// .menu-icon {
+//     margin-right: 12px;
+//     /* Space between icon and text */
+//     font-size: 26px;
+//     /* Increased icon size */
+//     color: #ffffff;
+//     /* Icon color matches text */
+// }
+// .mat-menu-item {
+//     display: flex;
+//     align-items: center;
+//     padding: 10px 16px;
+//     /* Adjust padding for menu items */
+//     color: #333;
+//     /* Dark text color for contrast */
+//     transition: background-color 0.3s ease;
+//     /* Smooth background transition */
+// }
+// .mat-menu-item:hover {
+//     background-color: #e0e0e0;
+//     /* Light background on hover for menu items */
+// }
+// .mat-menu-item .menu-icon {
+//     margin-right: 8px;
+//     /* Space between icon and text */
+//     color: #555;
+//     /* Icon color in menu */
+// }
+// @media (min-device-width: 701px) and (max-device-width: 1023px) {
+//     /* Hide all slides initially */
+//     .hero-slide {
+//         display: none;
+//     }
+//     /* Show only the first slide */
+//     .hero-slide:first-child {
+//         display: block;
+//     }
+//     /* General slide styles */
+//     .hero-slide {
+//         display: flex;
+//         flex-direction: column;
+//         /* Stack content and image vertically */
+//         align-items: center;
+//     }
+//     /* Adjust the width of the content section (text) */
+//     .hero-content {
+//         text-align: center;
+//         margin-bottom: 20px;
+//         /* Add some spacing between text and image */
+//         width: 90%;
+//         max-width: 800px;
+//         /* Set max width */
+//         padding: 0 20px;
+//         /* Add padding to avoid text touching edges */
+//         margin-top: 106px;
+//     }
+//     /* Style for the text (heading and paragraph) */
+//     .hero-content h1 {
+//         font-size: 34px;
+//         margin-bottom: 10px;
+//     }
+//     /* Style for the image section */
+//     .hero-image {
+//         width: 100%;
+//         text-align: center;
+//         margin-top: -67px;
+//         /* Adjust if needed for proper spacing */
+//     }
+//     .hero-image img {
+//         width: 100%;
+//         max-width: 600px;
+//         /* Limit max width for images */
+//         height: auto;
+//     }
+//     /* Hide navigation buttons */
+//     .nav-button {
+//         display: none;
+//     }
+//     /* Global Styling for the Login Container */
+//     .login-container {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         z-index: 10;
+//         width: 100%;
+//         height: 100vh;
+//         background: linear-gradient(135deg, #1e2a47, #2f3b61);
+//         /* Dark gradient background */
+//         margin-top: -3%;
+//         animation: slideInFromBottom 1s ease-out;
+//         /* Apply the bottom-to-top animation */
+//     }
+//     /* Styling for the Login Box */
+//     .login-box {
+//         background-color: transparent;
+//         padding: 20px;
+//         border-radius: 37px;
+//         text-align: center;
+//         width: 50%;
+//         /* Adjust width for tablet view */
+//         max-width: 400px;
+//         /* Ensure it doesn't exceed a reasonable size */
+//         box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+//         animation: fadeIn 1s ease-in-out;
+//     }
+//     /* Title Styling */
+//     .login-title {
+//         font-size: 26px;
+//         margin-bottom: 5px;
+//         color: #f8c02e;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//         letter-spacing: 1px;
+//         /* Slightly reduced letter-spacing */
+//         text-shadow: 0 0 10px #20042a, 0 0 20px #ee105f, 0 0 30px #8a8a8a;
+//     }
+//     /* Input Group Styling */
+//     .input-group {
+//         position: relative;
+//         margin-bottom: 20px;
+//         /* Reduced margin */
+//         width: 100%;
+//     }
+//     .input-label .text {
+//         font-size: 14px;
+//         color: #fff;
+//         font-weight: 600;
+//         margin-bottom: 5px;
+//         display: block;
+//     }
+//     /* Neon Effect for Icons */
+//     .neon-icon {
+//         position: absolute;
+//         left: 15px;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         font-size: 20px;
+//         /* Adjusted for tablet size */
+//         color: #ff007f;
+//         /* Neon pink */
+//         opacity: 0.8;
+//         animation: neonAnimation 2s ease-in-out infinite;
+//     }
+//     /* Input Field Styling */
+//     .neon-input {
+//         padding-left: 45px;
+//         padding-right: 10px;
+//         height: 45px;
+//         /* Slightly smaller height */
+//         font-size: 16px;
+//         /* Adjusted font size */
+//         color: #fff;
+//         background-color: #333;
+//         border: 2px solid #ff007f;
+//         /* Neon pink */
+//         border-radius: 8px;
+//         width: 100%;
+//         transition: border-color 0.3s, box-shadow 0.3s;
+//     }
+//     /* Focus effect on input fields */
+//     .neon-input:focus {
+//         border-color: #00ffcc;
+//         outline: none;
+//         box-shadow: 0 0 15px 2px #00ffcc;
+//         /* Cyan glow effect */
+//     }
+//     /* Error Message Styling */
+//     .error-message {
+//         color: #ff007f;
+//         font-size: 12px;
+//         margin-top: 5px;
+//         text-align: left;
+//     }
+//     /* Forgot Password Link */
+//     .forgot-password {
+//         color: #00ffcc;
+//         font-size: 14px;
+//         text-decoration: none;
+//         font-weight: 500;
+//         transition: color 0.3s;
+//     }
+//     .forgot-password:hover {
+//         color: #ff007f;
+//     }
+//     /* Button Styling */
+//     .neon-button {
+//         background-color: #ff007f;
+//         color: white;
+//         padding: 12px 20px;
+//         border: none;
+//         border-radius: 8px;
+//         font-size: 16px;
+//         width: 100%;
+//         cursor: pointer;
+//         transition: background-color 0.3s, box-shadow 0.3s;
+//     }
+//     /* Neon Glow Effect on Button */
+//     .neon-button:hover {
+//         background-color: #00ffcc;
+//         box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+//         /* Glowing effect */
+//     }
+//     /* Disable state for the button */
+//     .neon-button:disabled {
+//         background-color: #555;
+//         cursor: not-allowed;
+//     }
+//     /* Animation for Neon Glowing Icons */
+//     @keyframes neonAnimation {
+//         0% {
+//             text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+//             opacity: 0.8;
+//         }
+//         50% {
+//             text-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f, 0 0 60px #ff007f;
+//             opacity: 1;
+//         }
+//         100% {
+//             text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+//             opacity: 0.8;
+//         }
+//     }
+//     /* New Animation for Login Box (Sliding from Top) */
+//     @keyframes slideInFromTop {
+//         0% {
+//             opacity: 0;
+//             transform: translateY(-30px);
+//         }
+//         100% {
+//             opacity: 1;
+//             transform: translateY(0);
+//         }
+//     }
+//     /* New Animation for Login Container (Sliding from Bottom to Top) */
+//     @keyframes slideInFromBottom {
+//         0% {
+//             opacity: 0;
+//             transform: translateY(30px);
+//             /* Starts from below */
+//         }
+//         100% {
+//             opacity: 1;
+//             transform: translateY(0);
+//             /* Ends at its normal position */
+//         }
+//     }
+//     .hero-section {
+//         margin-top: 127px;
+//     }
+// }
+// @media (min-device-width: 280px) and (max-device-width: 700px) {
+//     /* Hide all slides initially */
+//     .hero-slide {
+//         display: none;
+//     }
+//     /* Show only the first slide */
+//     .hero-slide:first-child {
+//         display: block;
+//     }
+//     /* General slide styles */
+//     .hero-slide {
+//         display: flex;
+//         flex-direction: column;
+//         /* Stack content and image vertically */
+//         align-items: center;
+//     }
+//     /* Adjust the width of the content section (text) */
+//     .hero-content {
+//         text-align: center;
+//         margin-bottom: 20px;
+//         /* Add some spacing between text and image */
+//         width: 90%;
+//         max-width: 800px;
+//         /* Set max width */
+//         padding: 0 20px;
+//         /* Add padding to avoid text touching edges */
+//         margin-top: 106px;
+//     }
+//     /* Style for the text (heading and paragraph) */
+//     .hero-content h1 {
+//         font-size: 20px;
+//         margin-bottom: 10px;
+//     }
+//     /* Style for the image section */
+//     .hero-image {
+//         width: 100%;
+//         text-align: center;
+//         margin-top: -67px;
+//         /* Adjust if needed for proper spacing */
+//     }
+//     .hero-image img {
+//         width: 100%;
+//         max-width: 600px;
+//         /* Limit max width for images */
+//         height: auto;
+//     }
+//     /* Hide navigation buttons */
+//     .nav-button {
+//         display: none;
+//     }
+//     /* Global Styling for the Login Container */
+//     .login-container {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         z-index: 10;
+//         width: 100%;
+//         height: 100vh;
+//         background: linear-gradient(135deg, #1e2a47, #2f3b61);
+//         /* Dark gradient background */
+//         padding: 10px;
+//         /* Add some padding for smaller screens */
+//         animation: slideInFromBottom 1s ease-out;
+//         /* Apply the bottom-to-top animation */
+//     }
+//     /* Styling for the Login Box */
+//     .login-box {
+//         background-color: transparent;
+//         padding: 15px;
+//         /* Adjust padding for small devices */
+//         border-radius: 25px;
+//         /* Slightly smaller radius for mobile view */
+//         text-align: center;
+//         width: 90%;
+//         /* Increased width for small screens */
+//         max-width: 350px;
+//         /* Limit maximum width */
+//         box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+//         animation: fadeIn 1s ease-in-out;
+//     }
+//     /* Title Styling */
+//     .login-title {
+//         font-size: 24px;
+//         /* Reduced font size */
+//         margin-bottom: 10px;
+//         /* Reduced margin */
+//         color: #f8c02e;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//         letter-spacing: 1px;
+//         text-shadow: 0 0 10px #20042a, 0 0 20px #ee105f, 0 0 30px #8a8a8a;
+//     }
+//     /* Input Group Styling */
+//     .input-group {
+//         position: relative;
+//         margin-bottom: 15px;
+//         /* Reduced margin */
+//         width: 100%;
+//     }
+//     .input-label .text {
+//         font-size: 12px;
+//         /* Smaller font for labels */
+//         color: #fff;
+//         font-weight: 600;
+//         margin-bottom: 5px;
+//         display: block;
+//     }
+//     /* Neon Effect for Icons */
+//     .neon-icon {
+//         position: absolute;
+//         left: 15px;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         font-size: 18px;
+//         /* Smaller icons */
+//         color: #ff007f;
+//         opacity: 0.8;
+//         animation: neonAnimation 2s ease-in-out infinite;
+//     }
+//     /* Input Field Styling */
+//     .neon-input {
+//         padding-left: 40px;
+//         /* Adjusted padding */
+//         padding-right: 10px;
+//         height: 40px;
+//         /* Slightly smaller height */
+//         font-size: 14px;
+//         /* Smaller font size */
+//         color: #fff;
+//         background-color: #333;
+//         border: 2px solid #ff007f;
+//         border-radius: 8px;
+//         width: 100%;
+//         transition: border-color 0.3s, box-shadow 0.3s;
+//     }
+//     /* Focus effect on input fields */
+//     .neon-input:focus {
+//         border-color: #00ffcc;
+//         outline: none;
+//         box-shadow: 0 0 15px 2px #00ffcc;
+//     }
+//     /* Error Message Styling */
+//     .error-message {
+//         color: #ff007f;
+//         font-size: 12px;
+//         margin-top: 5px;
+//         text-align: left;
+//     }
+//     /* Forgot Password Link */
+//     .forgot-password {
+//         color: #00ffcc;
+//         font-size: 12px;
+//         /* Smaller font size */
+//         text-decoration: none;
+//         font-weight: 500;
+//         transition: color 0.3s;
+//     }
+//     .forgot-password:hover {
+//         color: #ff007f;
+//     }
+//     /* Button Styling */
+//     .neon-button {
+//         background-color: #ff007f;
+//         color: white;
+//         padding: 10px 18px;
+//         /* Smaller padding */
+//         border: none;
+//         border-radius: 8px;
+//         font-size: 14px;
+//         /* Smaller button text */
+//         width: 100%;
+//         cursor: pointer;
+//         transition: background-color 0.3s, box-shadow 0.3s;
+//     }
+//     /* Neon Glow Effect on Button */
+//     .neon-button:hover {
+//         background-color: #00ffcc;
+//         box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+//     }
+//     /* Disable state for the button */
+//     .neon-button:disabled {
+//         background-color: #555;
+//         cursor: not-allowed;
+//     }
+//     /* Animation for Neon Glowing Icons */
+//     @keyframes neonAnimation {
+//         0% {
+//             text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+//             opacity: 0.8;
+//         }
+//         50% {
+//             text-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f, 0 0 60px #ff007f;
+//             opacity: 1;
+//         }
+//         100% {
+//             text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+//             opacity: 0.8;
+//         }
+//     }
+//     /* Animation for Login Box */
+//     @keyframes fadeIn {
+//         0% {
+//             opacity: 0;
+//             transform: translateY(30px);
+//         }
+//         100% {
+//             opacity: 1;
+//             transform: translateY(0);
+//         }
+//     }
+//     /* New Animation for Login Container (Sliding from Bottom to Top) */
+//     @keyframes slideInFromBottom {
+//         0% {
+//             opacity: 0;
+//             transform: translateY(30px);
+//             /* Starts from below */
+//         }
+//         100% {
+//             opacity: 1;
+//             transform: translateY(0);
+//             /* Ends at its normal position */
+//         }
+//     }
+//     .hero-section {
+//         margin-top: 110px;
+//     }
+// }
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+}
+.hero-slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fullscreen-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire screen */
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+.hero-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+.prev {
+    left: 20px;
+}
+.next {
+    right: 20px;
+}
+/* Navbar Styling */
+.navbar {
+    background-color: #e7a84e;
+    /* Brown color */
+    // padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Navbar container to align content */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+}
+/* Buttons inside the navbar */
+.profile-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.profile-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+/* Marquee Styling */
+.ilss-marquee {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    font-weight: bold;
+    color: white;
+}
+.ilss-marquee marquee {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+/* Navbar - Ensure it uses Flexbox */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e7a84e;
+    /* Brown background */
+    position: relative;
+}
+// /* Align Buttons to Top Right */
+// .navbar-info-profile {
+//     position: absolute;
+//     top: 10px;
+//     right: 20px;
+//     display: flex;
+//     gap: 10px;
+//     /* Space between buttons */
+// }
+/* Common Button Styling */
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    color: #8B4513;
+    /* Brown text color */
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.profile-button mat-icon {
+    font-size: 20px;
+    color: #8B4513;
+}
+/* Hover Effect */
+.profile-button:hover {
+    background: #8B4513;
+    color: white;
+}
+.profile-button:hover mat-icon {
+    color: white;
+}
+.logo img {
+    width: 80px; /* Larger size */
+    height: auto;
+    color: white;
+}
+/* Right-align the user info and profile */
+.navbar-info-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    color: #8c0aa2;
+    font-weight: 500;
+}
+.navbar-info {
+    display: flex;
+    flex-direction: row;
+    /* Changed from column to row */
+    align-items: center;
+    /* Align them vertically */
+    gap: 15px;
+    /* Space between Fin Year and User */
+    text-align: right;
+}
+.hero-image {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.about-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.about-link:hover {
+    color: #ffcc00;
+}

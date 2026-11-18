@@ -1,0 +1,215 @@
+<header class="navbar" *ngIf="!userType">
+    <div class="navbar-container">
+        <!-- Left Section: Logo and Dropdown -->
+        <div class="left-section">
+            <!-- Logo -->
+            <a class="logo">
+                <img src="assets/images/Library_Logo.png" alt="Logo">
+            </a>
+            <!-- Our Services Dropdown (Better Styling) -->
+            <div class="dropdown">
+                <button mat-button [matMenuTriggerFor]="servicesMenu">Our Services</button>
+                <!-- Our Services Menu -->
+                <mat-menu #servicesMenu="matMenu">
+                    <button mat-menu-item (click)="onServiceSelect('ebook')" [matMenuTriggerFor]="ebookMenu">
+                        📖 eBooks
+                    </button>
+                    <button mat-menu-item (click)="onServiceSelect('audiobook')">
+                        🎧 Audiobooks
+                    </button>
+                    <button mat-menu-item (click)="onServiceSelect('researchPaper')">
+                        📑 Research Papers
+                    </button>
+                </mat-menu>
+                <!-- eBook Submenu -->
+                <mat-menu #ebookMenu="matMenu">
+                    <button mat-menu-item (click)="navigateTo()">Magazine</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('collegeBook')">College Book</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('schoolBook')">School Book</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('storyBook')">Story Book</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('fiction')">Fiction</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('nonFiction')">Non-Fiction</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('biographies')">Biographies</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('science')">Science</button>
+                    <button mat-menu-item (click)="onEbookCategorySelect('technology')">Technology</button>
+                </mat-menu>
+            </div>
+            <div class="whyReg" (click)="openWhyRegDialog()">
+                <i class="fa fa-user-plus"></i>
+                <span class="text-dark">Why Register?</span>
+            </div>
+        </div>
+        <!-- Marquee Section -->
+        <div class="ilss-marquee">
+            <marquee behavior="scroll" direction="left">
+                📚 Get your books now! ByteReads Digital Library , your one stop solution📖
+            </marquee>
+        </div>
+        <!-- Profile Buttons -->
+        <div class="navbar-info-profile">
+            <button mat-icon-button class="profile-button office me-2"
+                *ngIf=" userType !== 'OfficeUser' && userType !== 'MemberUser'" (click)="setUserType('OfficeUser')">
+                <mat-icon class="login-icon">business_center</mat-icon>
+                <span class="login-text">Office</span>
+            </button>
+            <button mat-icon-button class="profile-button Member"
+                *ngIf=" userType !== 'OfficeUser' && userType !== 'MemberUser'" (click)="setUserType('MemberUser')">
+                <mat-icon class="login-icon">person</mat-icon>
+                <span class="login-text">Member</span>
+            </button>
+            <!-- Home Button -->
+            <button mat-icon-button class="profile-button home" (click)="goHome()">
+                <mat-icon class="login-icon">home</mat-icon>
+                <span class="login-text">Home</span>
+            </button>
+        </div>
+    </div>
+</header>
+<header class="navbar-both" *ngIf="userType === 'OfficeUser' || userType === 'MemberUser'">
+    <div class="navbar-container-both">
+        <!-- Logo on the left -->
+        <a class="logo">
+            <img src="assets/images/Library_Logo.png" alt="Logo">
+        </a>
+        <!-- Title at the center -->
+        <span class="library-title">BYTEREADS DIGITAL LIBRARY</span>
+        <!-- Home button on the right with an icon -->
+        <span class="home-button" (click)="goBack()">
+            <i class="fas fa-home"></i> HOME
+        </span>
+    </div>
+</header>
+<form [formGroup]="logInForm" (ngSubmit)="loginHandler($event)" class="login-form">
+    <div *ngIf="userType === 'OfficeUser'" class="login-page-office-user">
+        <div class="overlay"></div>
+        <div class="row">
+            <div class="col-md-12 col-xl-12">
+                <div class="login-container">
+                    <div class="login-box">
+                        <h2 class="login-title">Office User Login</h2>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span class="text">Username</span>
+                            </div>
+                            <i class="fas fa-user neon-icon" id="user-icon"></i>
+                            <input type="email" class="form-control neon-input" formControlName="userName"
+                                placeholder="Enter your email" aria-label="Username" />
+                            <div *ngIf="logInForm.controls['userName'].invalid && logInForm.controls['userName'].touched"
+                                class="error-message">
+                                Please enter a valid username.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span class="text">Password</span>
+                            </div>
+                            <i class="fas fa-lock neon-icon" id="lock-icon"></i>
+                            <input type="password" class="form-control neon-input" formControlName="userPW"
+                                placeholder="Enter your password" aria-label="Password" />
+                            <div *ngIf="logInForm.controls['userPW'].invalid && logInForm.controls['userPW'].touched"
+                                class="error-message">
+                                Password is required.
+                            </div>
+                        </div>
+                        <!-- <div class="form-check d-flex justify-content-center">
+                            <a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?</a>
+                        </div> -->
+                        <button class="btn neon-button" type="submit" [disabled]="logInForm.invalid || isLoading">
+                            <span *ngIf="isLoading">Logging In...</span>
+                            <span *ngIf="!isLoading">Log In</span>
+                        </button>
+                        <a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?Reset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<form [formGroup]="logInForm" (ngSubmit)="loginHandler($event)" class="login-form">
+    <div *ngIf="userType === 'MemberUser'" class="login-page-Member-user">
+        <div class="overlay"></div>
+        <div class="row">
+            <div class="col-md-12 col-xl-12">
+                <div class="login-container">
+                    <div class="login-box">
+                        <h2 class="login-title">Member User Login</h2>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span class="text">Username</span>
+                            </div>
+                            <i class="fas fa-user neon-icon" id="user-icon"></i>
+                            <input type="email" class="form-control neon-input" formControlName="userName"
+                                placeholder="Enter your email" aria-label="Username" />
+                            <div *ngIf="logInForm.controls['userName'].invalid && logInForm.controls['userName'].touched"
+                                class="error-message">
+                                Please enter a valid username.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span class="text">Password</span>
+                            </div>
+                            <i class="fas fa-lock neon-icon" id="lock-icon"></i>
+                            <input type="password" class="form-control neon-input" formControlName="userPW"
+                                placeholder="Enter your password" aria-label="Password" />
+                            <div *ngIf="logInForm.controls['userPW'].invalid && logInForm.controls['userPW'].touched"
+                                class="error-message">
+                                Password is required.
+                            </div>
+                        </div>
+                        <!-- <div class="form-check d-flex justify-content-center">
+                            <a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?</a>
+                        </div> -->
+                        <button class="btn neon-button" type="submit" [disabled]="logInForm.invalid || isLoading">
+                            <span *ngIf="isLoading">Logging In...</span>
+                            <span *ngIf="!isLoading">Log In</span>
+                        </button>
+                        <!-- 🔹 Add Registration Link -->
+                        <div class="register-link">
+                            <span>Don't have an account?</span>
+                            <a routerLink="/auth/new-registration" class="register-btn">Create</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<section class="magazine-section">
+    <h2 *ngIf="!selectedCategory">Explore Our Magazines</h2>
+    <button *ngIf="selectedCategory || selectedBook" class="back-btn" (click)="goBackTo()">⬅ Back</button>
+    <div class="magazine-list" *ngIf="!selectedCategory && !selectedBook">
+        <div class="magazine-card" *ngFor="let magazine of magazines" (click)="showCategory(magazine.category)">
+            <img [src]="magazine.image" [alt]="magazine.title">
+            <h3>{{ magazine.title }}</h3>
+            <p>{{ magazine.description }}</p>
+            <button class="read-btn" (click)="showCategory(magazine.category, $event)">Books</button>
+        </div>
+    </div>
+    <!-- Books List -->
+    <h2 class="text-center" *ngIf="selectedCategory && !selectedBook">Books in {{ selectedCategory }}</h2>
+    <div class="books-list">
+        <div class="book-card" *ngFor="let book of filteredBooks" (click)="showBookDetails(book)">
+            <img [src]="book.image" [alt]="book.title">
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+            <button class="read-btn" (click)="showBookDetails(book, $event)">About</button>
+        </div>
+    </div>
+    <!-- Individual Book Details -->
+    <div #bookDetailsSection class="book-details" *ngIf="selectedBook">
+        <h2 class="text-center">{{ selectedBook.title }}</h2>
+        <div class="book-container">
+            <img class="book-image" [src]="selectedBook.image" [alt]="selectedBook.title">
+            <div class="book-info">
+                <h5 class="author-text mt-3"><strong></strong> {{ selectedBook.author }}</h5>
+                <p class="about-text"><strong>About the Book:</strong> {{ selectedBook.description }}</p>
+                <p class="availability-text"><strong>Available Copies:</strong> {{ selectedBook.totalCopies }}</p>
+                <!-- Borrow Button: Disabled if no copies are available -->
+                <button class="borrow-btn" [disabled]="selectedBook.totalCopies === 0" (click)="GotoMemberLoginPage()">
+                    {{ selectedBook.totalCopies > 0 ? 'Borrow Book' : 'Not Available' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

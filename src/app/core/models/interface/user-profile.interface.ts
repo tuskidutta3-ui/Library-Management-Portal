@@ -1,0 +1,35 @@
+export interface UserProfile {
+    exp: number;
+    nbf: number;
+    OffShop_CatererId: number
+    ST_NO: number
+    VAT_No: number,
+    BaseNo: number
+    BaseName: string;
+    UserCode: string;
+    Club_Name: string;
+    FinYear: string;
+    UserGrpId: number;
+    Role: string; 
+    Club_Add1: string,
+    Club_Add2: string,
+    Phone_No: number,
+    Club_Address: string,
+    UserEmail: string,
+    WebSite: string,
+    ECess: number,
+    HeCess: number,
+    Fine_FirstHalf_May: number,
+    Fine_FirstHalf_June: number,
+    Fine_SecHalf_October: number,
+    Fine_SecHalf_November: number,
+    Fine_JA_Dup_Card: number,
+    Add_Comp_IP: string,
+    JA_Code: number,
+    AnnualMemCode: number,
+    LadyAssociateCode: number,
+    PayHeadId_MemFees: number,
+    PayHeadId_LockerRent: number,
+    LiquorTaxRate: number, 
+    Canteen_CatererId: number, 
+}

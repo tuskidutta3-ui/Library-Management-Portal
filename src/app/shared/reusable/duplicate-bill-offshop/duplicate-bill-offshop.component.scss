@@ -1,0 +1,253 @@
+.scrollable-form {
+    max-height: 100vh;
+    /* Adjust height as needed */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+}
+.mat-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    display: table;
+    border-collapse: collapse;
+    margin: 0px;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+}
+.tableHeader {
+    background-color: rgb(251, 251, 251);
+}
+.upload-section,
+.upload-section-sig {
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensure the button stays at the bottom */
+}
+.upload-section:hover,
+.upload-section-sig:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Photo Upload Styling */
+#photoUpload {
+    width: 153px;
+    height: 153px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    box-sizing: border-box;
+}
+// .selected {
+//     background-color: #eac803;
+//     /* Adjust this based on your design */
+// }
+/* Add this to your styles.scss or component-specific styles */
+.hovered {
+    background-color: #eac803;
+    color: #000;  /* Optional: set text color */
+    transition: background-color 0.2s ease;  /* Smooth transition */
+  }
+/* Button Customization for Upload */
+.btn-upload,
+.btn-upload-signature {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+}
+.btn-upload:hover,
+.btn-upload-signature:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Signature Upload Button Styling */
+.btn-upload,
+.btn-upload-signature {
+    width: 75%;
+}
+/* Footer Styling for Signature Card */
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: none;
+}
+/* Hide file input */
+input[type="file"].d-none {
+    display: none;
+}
+.find-button {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: #cf05aa;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+.find-button:hover {
+    background-color: #c70ba5;
+    color: #ffffff;
+    /* Color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+.btn-outline-danger {
+    border-color: #dc3545;
+    /* Customize border color */
+}
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    /* Change background on hover */
+    color: white;
+    /* Change text color on hover */
+}
+.btn {
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+.btn-style {
+    display: flex;
+    align-items: center;
+    padding: 7px 13px;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline-danger {
+    border-color: #dc3545;
+    /* Customize border color */
+}
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    /* Change background on hover */
+    color: white;
+    /* Change text color on hover */
+}
+.btn {
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+.btn-style {
+    display: flex;
+    align-items: center;
+    /* Center icon and text vertically */
+    padding: 10px 15px;
+    /* Consistent padding */
+    color: #fff;
+    /* Text color */
+    border: none;
+    border-radius: 4px;
+    /* Slightly rounded corners */
+    font-size: 14px;
+    /* Font size */
+    font-weight: 500;
+    /* Slightly bolder text */
+    text-transform: uppercase;
+    /* Uppercase text */
+    cursor: pointer;
+    /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transitions */
+}
+.hovered-row {
+    background-color: #eac803;  /* Adjust this based on your design */
+  }
+/* Print RCPT Button */
+.prcpt-print-btn {
+    background-color: #dc3545;
+    /* Red */
+}
+.prcpt-print-btn:hover {
+    background-color: #c82333;
+    /* Darker shade on hover */
+    transform: translateY(-2px);
+    /* Subtle lift effect */
+}
+/* Print RCPT Button */
+.prcpt-print-btn {
+    background-color: #dc3545;
+    /* Red */
+}
+.prcpt-print-btn:hover {
+    background-color: #c82333;
+    /* Darker shade on hover */
+    transform: translateY(-2px);
+    /* Subtle lift effect */
+}
+.icon {
+    margin-right: 8px;
+    /* Spacing between icon and text */
+    font-size: 16px;
+    /* Icon size */
+    transition: transform 0.2s;
+    /* Icon transition effect */
+}
+@media (min-device-width: 280px) and (max-device-width: 700px) {
+    .adjust {
+        margin-top: 16px;
+    }
+    .mat-column-billno {
+        padding-left: 1%;
+        flex: 0 0 40%;
+    }
+    .mat-column-date {
+        flex: 0 0 30%;
+    }
+    .mat-column-amount {
+        flex: 0 0 30%;
+    }
+}
+@media (min-device-width: 701px) and (max-device-width: 1023px) {
+    .adjust1 {
+        margin-top: 16px;
+    }
+    .photoadjust {
+        display: flex;
+        justify-content: center;
+    }
+    .margin1 {
+        margin-top: 10px;
+    }
+    .mat-column-billno {
+        padding-left: 1%;
+        flex: 0 0 50%;
+    }
+    .mat-column-date {
+        flex: 0 0 25%;
+    }
+    .mat-column-amount {
+        flex: 0 0 25%;
+    }
+}
+@media (min-device-width: 1024px) {
+    .mat-column-billno {
+        padding-left: 1%;
+        flex: 0 0 35%;
+    }
+    .mat-column-date {
+        flex: 0 0 20%;
+    }
+    .mat-column-amount {
+        flex: 0 0 30%;
+    }
+    .mat-column-print {
+        flex: 0 0 15%;
+    }
+    .button-display {
+        margin-top: 35px;
+    }
+}

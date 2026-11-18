@@ -1,0 +1,299 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+.project-title {
+  font-size: 1.7rem;
+  /* Larger font size for emphasis */
+  font-weight: 700;
+  /* Bold text for importance */
+  text-transform: uppercase;
+  /* Makes the text uppercase for a formal touch */
+  letter-spacing: 2px;
+  /* Spacing between the letters for readability */
+  text-align: center;
+  /* Centers the title horizontally */
+  margin: 0;
+  /* Removes any default margin */
+  padding: 20px 0;
+  /* Adds vertical padding for some spacing */
+  /* Apply a multi-color gradient background */
+  background: linear-gradient(45deg, #ff7f50, #ff6347, #6a5acd, #20b2aa, #ff1493);
+  /* The gradient transitions through various colors (adjust the colors as needed) */
+  /* Background clip to apply the gradient on the text */
+  -webkit-background-clip: text;
+  /* For Safari/Chrome */
+  -moz-background-clip: text;
+  /* For Firefox */
+  background-clip: text;
+  /* Standard property for newer browsers */
+  color: transparent;
+  /* Makes the text itself transparent to show the gradient */
+  animation: fadeInTitle 1s ease-out;
+  /* Fade-in effect for the text */
+}
+/* Optional: Animation to make the title fade in */
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-description {
+  font-size: 1.1rem;
+  /* Slightly larger text for readability */
+  color: #666;
+  /* Gray color for the text */
+  margin-top: 15px;
+  /* Adds some spacing above the description */
+  line-height: 1.6;
+  /* Increases the line height for better readability */
+  text-align: center;
+  /* Centers the description text */
+  /* Add a subtle color gradient effect for a modern look */
+  background: linear-gradient(90deg, #ff7f50, #ff6347, #6a5acd, #20b2aa, #ff1493);
+  -webkit-background-clip: text;
+  /* For Safari/Chrome */
+  -moz-background-clip: text;
+  /* For Firefox */
+  background-clip: text;
+  /* Standard property for newer browsers */
+  color: transparent;
+  /* Makes the text itself transparent to show the gradient */
+  animation: fadeInDescription 1s ease-out 0.5s;
+  /* Fade-in effect with a slight delay */
+}
+/* Fade In Description Animation */
+@keyframes fadeInDescription {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Moves the text down from its original position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* Moves the text back to its original position */
+  }
+}
+/* Check Icon Styles */
+.check-icon-container {
+  display: inline-block;
+  margin-left: 10px;
+  /* Space between title and icon */
+  opacity: 0;
+  // transform: translateY(-10px);
+  // animation: none;
+  /* Delay the icon's appearance */
+}
+/* Check Icon Styles */
+.check-icon-container {
+  display: inline-block;
+  margin-left: 10px;  /* Space between title and icon */
+  opacity: 1;  /* Ensure icon is visible */
+  transform: translateY(-10px);
+  animation: fadeInIcon 1s ease-out 1s; /* Add animation for the icon */
+}
+.check-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #28a745; /* Green background for the check circle */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.check-icon i {
+  color: white;
+  font-size: 1.5rem; /* Adjust the size of the check icon */
+}
+/* Fade In Title Animation */
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Fade In Icon Animation */
+@keyframes fadeInIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Fade In Description Animation */
+@keyframes fadeInDescription {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 30px;
+}
+.spinner {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #dd4f24;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Payment Summary */
+.payment-summary {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  /* Slightly rounded for a smoother look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  transition: all 0.3s ease;
+}
+.payment-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.payment-header h2 {
+  font-size: 1.9rem;
+  /* Adjusted for improved hierarchy */
+  font-weight: 600;
+  color: #003366;
+  letter-spacing: 0.5px;
+}
+.payment-header p {
+  font-size: 1rem;
+  /* Consistent with other text sizes */
+  color: #666;
+}
+.transaction-details {
+  margin-top: 20px;
+}
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.transaction-item:hover {
+  background-color: #f1f1f1;
+  transform: translateX(5px);
+}
+.transaction-item .label {
+  font-weight: 600;
+  color: #003366;
+}
+.transaction-item .value {
+  font-weight: 400;
+  color: #555;
+}
+/* Buttons */
+.close-button,
+.view-receipt-button {
+  font-size: 1rem;
+  padding: 12px 24px;
+  /* Adjusted padding for a more balanced button */
+  margin: 15px 10px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.close-button:hover,
+.view-receipt-button:hover {
+  background-color: #004f99;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.close-button:active,
+.view-receipt-button:active {
+  transform: translateY(1px);
+}
+.view-receipt-button {
+  background-color: #28a745;
+}
+.view-receipt-button:hover {
+  background-color: #218838;
+}
+/* Fade In Effect for Payment Details */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+    /* Added padding for mobile */
+  }
+  .project-title {
+    font-size: 2rem;
+    /* Adjusted from 2.2rem */
+  }
+  .payment-summary {
+    padding: 20px;
+  }
+  .transaction-item {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  .close-button,
+  .view-receipt-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

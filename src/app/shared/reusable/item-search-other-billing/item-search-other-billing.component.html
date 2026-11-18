@@ -1,0 +1,67 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Item Search</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content">
+    <!-- Table Section -->
+    <div class="card">
+        <div class="card-body">
+            <!-- Table Container with Scrollable Content -->
+            <div #tableContainer class="table-container">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                    <!-- Id Column -->
+                    <ng-container matColumnDef="Id">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Id</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.item_id}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Name">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Name</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.itemName}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef>
+                            <input type="search" class="search-input" placeholder="Search by Name..."
+                                [(ngModel)]="searchStringName" (input)="onSearchInputName($event)" #searchInputName>
+                        </mat-footer-cell>
+                    </ng-container>
+                    <!-- Uom Column -->
+                    <ng-container matColumnDef="Uom">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Uom</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.uomShort}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Rate Column -->
+                    <ng-container matColumnDef="Rate">
+                        <mat-header-cell *matHeaderCellDef class="text-dark">Rate</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.rate}}</mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Action Column -->
+                    <ng-container matColumnDef="Action">
+                        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-menu-item (click)="selectRow(element)">
+                                <div class="action-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12l4 4L19 7" stroke="#4CAF50" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </mat-cell>
+                        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                    </ng-container>
+                    <!-- Header, Rows, and Footer -->
+                    <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader" sticky></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;" (mouseenter)="onRowHover(row)"
+                        [ngClass]="{'hovered-row': row === selectedRow}">
+                    </mat-row>
+                    <mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></mat-footer-row>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

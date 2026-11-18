@@ -1,0 +1,49 @@
+<nav class="navbar">
+    <h1>Librarian Dashboard📚</h1>
+    <div class="navbar-actions"> 
+      <button class="logout-button" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </nav>
+<div class="row mt-5 d-flex justify-content-center" *ngIf="librarianDashboardService.isHeroVisible">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-body">
+                <div class="librarian-dashboard">
+                    <!-- Show Dashboard Cards only when no feature is selected -->
+                    <div class="dashboard-grid" *ngIf="!activeFeature">
+                        <div class="dashboard-card" [class.active]="activeFeature === 'manageBooks'"
+                            (click)="GotoCategory()">
+                            <h3>📖 Add Category</h3>
+                            <p>Add, edit, or remove Category.</p>
+                        </div>
+                        <div class="dashboard-card" [class.active]="activeFeature === 'manageBooks'"
+                            (click)="GotoManageBooks()">
+                            <h3>📖 Manage Books</h3>
+                            <p>Add, edit, or remove books.</p>
+                        </div>
+                        <div class="dashboard-card" [class.active]="activeFeature === 'manageMembers'"
+                             (click)="GotoMemberRegistration()">
+                            <h3>👥 Member Management</h3>
+                            <p>View and update member records.</p>
+                        </div>
+                            <div class="dashboard-card" [class.active]="activeFeature === 'issueReturnBooks'"
+                        (click)="GotoIssueBooks()">
+                            <h3>🔄 Issue & Return Books</h3>
+                            <p>Track book issuance and returns.</p>
+                        </div>
+                        <div class="dashboard-card" [class.active]="activeFeature === 'overdueManagement'"
+                            (click)="GotoOverDueManagement()">
+                            <h3>⚠ Pending Renewal Request</h3>
+                            <p>Approve/Reject Renewal Request</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section *ngIf="!librarianDashboardService.isHeroVisible">
+    <router-outlet></router-outlet>
+</section>

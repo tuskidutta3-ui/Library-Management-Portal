@@ -1,0 +1,74 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Locker Search</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content scrollable-form">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="app-search-box dropdown app-search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="top-search"
+                            [(ngModel)]="searchString" (keydown.enter)="searchResult()">
+                        <button class="btn input-group-text" type="submit" (click)="searchResult()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button class="btn input-restore" type="submit" (click)="restoreResult()"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block overflow-auto">
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                        <ng-container matColumnDef="loc_Code">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Locker Code</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.loc_Code}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="loc_Location_Name">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Locker Name</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.loc_Location_Name}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="oldNo">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Old Locker No.</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.oldNo}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="loc_Type">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Locker Type</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.loc_Type}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="loc_Rent_Per_Yr">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Locker Rent Per Yr</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.loc_Rent_Per_Yr}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="servTaxPerc">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Tax % </mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.servTaxPerc}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Action">
+                            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <button mat-menu-item (click)="selectRow(element)">
+                                    <div
+                                        style="display: flex; align-items: center; border: 3px solid #4CAF50; border-radius: 3px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 12l4 4L19 7" stroke="#4CAF50" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </table>
+                </div>
+            </div>
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="collectionSize" [maxSize]="2"
+                [rotate]="true" [boundaryLinks]="true" [ellipses]="false" (pageChange)="onPaginationClick($event)">
+            </ngb-pagination>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end">
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal"
+        [mat-dialog-close]="false">Close</button>
+</div>

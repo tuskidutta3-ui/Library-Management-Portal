@@ -1,0 +1,76 @@
+<body> 
+<!-- Navbar -->
+<!-- In your navbar component -->
+<nav class="navbar">
+    <h1>Member Dashboard📚</h1>
+    <div class="navbar-actions">
+      <!-- Use the toggle component -->
+      <!-- <app-dark-mode-toggle></app-dark-mode-toggle> -->
+      <button class="logout-button" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </nav>
+    <!-- Main Dashboard -->
+<div class="row mt-5 d-flex justify-content-center" *ngIf="MemberDashboardService.isHeroVisible">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-body">
+                <div class="dashboard-container">
+                    <h2 class="member-welcome">
+                        👋 Welcome, <span class="highlight">{{ memberName }}</span>!
+                    </h2>
+                    <div class="profile-section">
+                        <i class="fas fa-user-circle profile-icon"></i>
+                        <p><strong>Member ID:</strong> {{ memberId }}</p>
+                        <p><strong>Email:</strong> {{ memberEmail }}</p>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card" (click)="viewBorrowedBooks()">
+                            <h3>📖 Request Books</h3>
+                            <p>Request the books you want</p>
+                        </div>
+                        <div class="dashboard-card" (click)="renewBooks()">
+                            <h3>🔄 Renew Books</h3>
+                            <p>Extend the borrowing period.</p>
+                        </div>
+                    </div>
+                    <!-- Notifications Section -->
+                    <div *ngIf="showNotifications" class="notifications">
+                        <h3>🔔 Notifications</h3>
+                        <ul #notificationsList class="notification-list">
+                            <li *ngFor="let notification of notifications">{{ notification }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section *ngIf="!MemberDashboardService.isHeroVisible">
+    <router-outlet></router-outlet>
+</section>
+<!-- <footer class="footer">
+    <div class="footer-content">
+        <div class="about" (click)="openAboutUsDialog()">
+            <i class="fa fa-info-circle"></i>
+            <span>About Us</span>
+        </div>
+        <div class="contact">
+            <i class="fa fa-phone"></i>
+            <span>Contact Us:</span>
+            <a href="tel:7777777777">7777777777</a> <span class="text-dark">(9 A.M to 7 P.M.)</span>
+        </div>
+        <div class="email">
+            <i class="fa fa-envelope"></i>
+            <span>Email:</span>
+            <a href="mailto:support&#64;bytereads.com.">support&#64;bytereads.com.</a>
+        </div>
+        <div class="website">
+            <i class="fa fa-globe"></i>
+            <span>Website:</span>
+            <a href="https://www.bytereads.com" target="_blank">www.bytereads.com</a>
+        </div>
+    </div>
+</footer> -->
+</body>

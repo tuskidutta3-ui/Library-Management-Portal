@@ -1,0 +1,295 @@
+.dashboard-container {
+    text-align: center;
+    padding: 20px;
+  }
+  .profile-section {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 60%;
+  }
+  .profile-icon {
+    font-size: 50px;
+    color: #555;
+  }
+  .dashboard-actions button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .logout-button {
+    background: linear-gradient(135deg #6f0303, #ff416c);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .logout-button {
+    background:  #6f0303;
+    color: white;
+  }
+  .logout-button:hover {
+    background: linear-gradient(135deg, #6f0303, #ff416c);
+  }
+  .dashboard-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  } 
+  .dashboard-card {
+    background-color: #f6f1b1;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .dashboard-card:hover {
+    background: brown;
+    color: white;
+    transform: scale(1.05);
+  }
+  .dashboard-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .dashboard-card p {
+    font-size: 14px;
+    color: gray;
+  }
+  .dark-mode-card {
+    background: #343a40;
+    color: white;
+  }
+  .dark-mode-card:hover {
+    background: black;
+  }
+  .notifications {
+    margin-top: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+  }
+  /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dc8850;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-actions {
+    display: flex;
+    gap: 15px;
+  }
+  .toggle-mode,
+  .logout-button {
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  .toggle-mode:hover {
+    background: #ddd;
+  }
+  /* Dark Mode */
+  .dark-mode {
+    background: #121212;
+    color: white;
+  }
+  .dark-mode .card,
+  .dark-mode .dashboard-card {
+    background: #333;
+    color: white;
+  }
+  .dark-mode .navbar {
+    background: #000;
+  }
+  .dark-mode .toggle-mode {
+    background: #222;
+    color: white;
+  }
+  .dark-mode .toggle-mode:hover {
+    background: #555;
+  }
+  .footer {
+    background-color: #e67b34;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width:1000px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Wrap if screen is small */
+}
+.footer {
+    bottom: 0;
+    padding: 19px 15px 20px;
+    position: relative;
+    right: 0;
+    color: #000000;
+    /* left: 255px; */
+    border-top: 1px solid #e2e7f1;
+    width: 68%;
+}
+.footer .contact,
+.footer .email,
+.footer .website {
+    margin: 5px 0;
+}
+.footer i {
+    margin-right: 5px;
+    color: #330000;
+}
+.footer a {
+    color: #330000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.member-welcome {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    color: brown;  
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+  .highlight {
+    color: #4a0606;
+    font-weight: 700;
+  }
+  .notifications {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .notification-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    scroll-behavior: smooth; /* Ensures smooth scrolling */
+  }
+  .notification-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #ffecb3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  .notification-list li:hover {
+    background: #ffb74d;
+  }
+  .about{
+    cursor: pointer;
+}
+.librarian-dashboard {
+    padding: 20px;
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.dashboard-card {
+    background-color: #f6f1b1;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.dashboard-card:hover {
+    transform: scale(1.05);
+    background-color: brown
+}
+.feature-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.back-btn {
+    display: block;
+    margin-bottom: 1px;
+    background:  #6f0303;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 44%;
+}
+.back-btn:hover {
+    background: linear-gradient(135deg, #6f0303, #ff416c);
+}
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #7c1705d1;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #9e2712d1;
+}
+.collapsible {
+    overflow: hidden;
+    margin-top: 10px;
+}
+.input-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.submit{
+    background-color: #d76175;
+}

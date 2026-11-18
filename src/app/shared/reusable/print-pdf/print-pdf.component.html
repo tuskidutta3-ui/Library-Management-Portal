@@ -1,0 +1,25 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <!-- <span>Add Bank</span> -->
+    <span class="flex-grow-1 flex-shrink-1 flex-basis-auto"></span>
+    <button mat-icon-button data-dismiss="modal" mat-dialog-close tabindex="-1">
+        <mat-icon>cancel</mat-icon>
+    </button>
+</div>
+<div mat-dialog-content class="dialog-content">
+    <div class="row mt-1">
+        <div class="action-buttons">
+            <button class="action-btn download-btn" (click)="print('download')">
+                <mat-icon>cloud_download</mat-icon>
+                <span>Download</span>
+            </button>
+            <button class="action-btn print-btn" (click)="print('print')">
+                <mat-icon>print</mat-icon>
+                <span>Print</span>
+            </button>
+            <button class="action-btn open-btn" (click)="print('open')">
+                <mat-icon>open_in_browser</mat-icon>
+                <span>Open</span>
+            </button>
+        </div>
+    </div>
+</div>

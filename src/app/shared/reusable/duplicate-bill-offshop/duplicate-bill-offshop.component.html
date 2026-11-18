@@ -1,0 +1,100 @@
+<div mat-dialog-title class="d-flex shadow-sm">
+    <span>Duplicate Bill (OffShop) Printing</span>
+</div>
+<div mat-dialog-content data-target="#modal" class="dialog-content scrollable-form">
+    <form [formGroup]="editDuplicateBillInfo" class="mat-form-field">
+        <div class="row mt-3">
+            <div class="col-12 col-md-12 col-xl-12">
+                <div class="card rounded border-2">
+                    <div class="card-body bg-light">
+                        <div class="row mt-3">
+                            <div class="col-12 col-md-5 col-xl-3">
+                                <label class="col-form-label" for="member">Member Code</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="member" formControlName="mem_Code"
+                                        placeholder="Search..." autocomplete="off" [readonly]="isMemberCodeEntered()">
+                                    <span class="input-group-text">
+                                        <a href="javascript:void(0)" [ngClass]="{'disabled': isMemberCodeEntered()}">
+                                            <i class="bi bi-search"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-7 col-xl-4 adjust">
+                                <label class="col-form-label" for="name">Member Name
+                                </label>
+                                <input type="text" class="form-control" id="name" formControlName="mem_Name"
+                                    placeholder="Member Name" autocomplete="off" readonly>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <label class="col-form-label ">Bill Date</label>
+                                <div class="input-group date" id="datepicker">
+                                    <input type="text" class="form-control" id="date" placeholder="Bill Date"
+                                        autocomplete="off" formControlName="businessDate" ngbDatepicker
+                                        #fromDtPicker="ngbDatepicker">
+                                    <button #datepicker Button class="btn btn-outline-secondary"
+                                        (click)="fromDtPicker.toggle()" type="button"><i
+                                            class="bi bi-calendar-fill"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xl-2  button-display">
+                                <button type="button" class="btn find-button" (click)="DisplaySettleBillOffshop()">
+                                    <i class="fas fa-search"></i> Find
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-md-12 col-xl-12">
+                <div class="card rounded border-2">
+                    <div class="card-body bg-light">
+                        <div class="d-block overflow-auto">
+                            <div class="table-responsive" #tableContainer tabindex="0">
+                                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                                    <ng-container matColumnDef="billno">
+                                        <mat-header-cell *matHeaderCellDef class="text-dark">Bill No.</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.billNo}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="date">
+                                        <mat-header-cell *matHeaderCellDef class="text-dark">Bill Date</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.billDate | date:
+                                            'dd/MM/yyyy'}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="amount">
+                                        <mat-header-cell *matHeaderCellDef class="text-dark">Amount</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.totalNet_AfterRo}}</mat-cell>
+                                    </ng-container>
+                                    <!-- Define the 'print' column in your table -->
+                                    <ng-container matColumnDef="print">
+                                        <mat-header-cell *matHeaderCellDef class="text-dark">Print</mat-header-cell>
+                                        <mat-cell *matCellDef="let element; let index = index">
+                                            <button type="button" class="btn-style prcpt-print-btn"
+                                                (click)="print(element, index)" (click)="selectRow(element)">
+                                                <mat-icon class="mr-2">print</mat-icon>
+                                                <span class="font-weight-bold">Print</span>
+                                            </button>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <mat-header-row *matHeaderRowDef="displayedColumns"
+                                        class="tableHeader"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayedColumns;"
+                                        (mouseenter)="onRowHover(row)"
+                                        [ngClass]="{'hovered-row': row === selectedRow}"></mat-row>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions class="float-end">
+    <!-- Close Button -->
+    <button mat-raised-button color="warn" class="btn btn-secondary" data-dismiss="modal" [mat-dialog-close]="false">
+        Close
+    </button>
+</div>

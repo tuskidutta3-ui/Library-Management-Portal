@@ -1,0 +1,100 @@
+/* Card Styling */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Table Wrapper with Scrollable Content */
+  .table-container {
+    max-height: 400px;
+    /* Adjust the height as needed */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+    position: relative;
+  }
+  /* Sticky Header and Footer */
+  .mat-header-row.sticky,
+  .mat-footer-row.sticky {
+    position: sticky;
+    z-index: 2;
+  }
+  .mat-header-row.sticky {
+    top: 0;
+    background-color: #007bff;
+    /* Header background color */
+    color: white;
+    /* Header text color */
+  }
+  .mat-footer-row.sticky {
+    bottom: 0;
+    background-color: #007bff;
+    /* Footer background color */
+    color: white;
+    /* Footer text color */
+  }
+  /* Header Cell Styling */
+  .mat-header-cell {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+  }
+  /* Data Cell Styling */
+  .mat-cell {
+    padding: 8px;
+    text-align: center;
+  }
+  /* Search Input Styling */
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  .hovered-row {
+    background-color: #eac803;  /* Adjust this based on your design */
+  }
+  .tableHeader {
+    background-color: #007bff;
+    color: white;
+  }
+  /* Style for hovered row */
+  .mat-row.hovered-row {
+    background-color: #e8f5e9 !important;
+  }
+  @media (min-device-width: 1024px) {
+    .head-elements-position {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+    .mat-column-Id {
+      padding-left: 1%;
+      flex: 0 0 5%;
+    }
+    .mat-column-Code {
+      flex: 0 0 15%;
+    }
+    .mat-column-Name {
+      flex: 0 0 40%;
+    }
+    .mat-column-Uom {
+      flex: 0 0 20%;
+    }
+    .mat-column-Rate {
+      flex: 0 0 10%;
+    }
+    .mat-column-Action {
+      flex: 0 0 10%;
+    }
+  }

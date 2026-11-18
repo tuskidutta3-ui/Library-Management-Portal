@@ -1,0 +1,271 @@
+<!-- Full page container -->
+<div [ngClass]="getDynamicClass()">
+    <div class="home-page-container">
+        <header class="navbar">
+            <div class="navbar-container">
+                <!-- Logo and About Us Link -->
+                <div class="navbar-left">
+                    <a class="logo">
+                        <img src="assets/images/Library_Logo.png" alt="Logo">
+                    </a>
+                    <!-- <a routerLink="/about-us" class="about-link">About Us</a> -->
+                </div>
+                <!-- Marquee Text -->
+                <div class="ilss-marquee">
+                    <marquee behavior="scroll" direction="left">
+                        📚 Welcome to the ByteReads Digital Library – Discover, Learn, and Grow with Books! 📖
+                    </marquee>
+                </div>
+                <!-- Right side: User Info & Profile -->
+                <div class="navbar-info-profile">
+                    <div class="navbar-info"> 
+                        <span>User: {{ userprf?.BaseName }}</span>
+                    </div>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" class="profile-button">
+                        <mat-icon class="profile-icon">account_circle</mat-icon>
+                    </button>
+                </div>
+                <mat-menu #menu="matMenu" class="custom-menu">
+                    <button mat-menu-item routerLink="/auth/reset-password">
+                        <mat-icon class="menu-icon">lock_reset</mat-icon>
+                        <span>Change Password</span>
+                    </button>
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon class="menu-icon">power_settings_new</mat-icon>
+                        <span>Log Out</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </header>
+        <section class="about-us">
+            <h1>ByteReads Digital Library</h1>
+            <p>
+                Welcome to <strong>ByteReads Digital Library</strong>, your gateway to a vast collection of books, research papers, 
+                and multimedia resources. Our mission is to make reading and learning accessible to everyone, 
+                providing a seamless digital experience for book lovers, students, and researchers worldwide.
+            </p>
+            <h2>Why Choose ByteReads?</h2>
+            <ul>
+                <li>📖 A diverse collection of digital books and audiobooks</li>
+                <li>🔍 Advanced search and personalized recommendations</li>
+                <li>🌍 Access your library anytime, anywhere</li>
+                <li>📚 Curated content from top publishers and authors</li>
+            </ul>
+            <p>
+                Join us in exploring a world of knowledge, where learning never stops!
+            </p>
+        </section>
+        <!-- Conditionally display the general-purpose hero section -->
+        <section *ngIf="homeservice.isHeroVisible && userType !== 'OfficeUser'  && userType !== 'MemberUser'"
+            class="hero-section">
+            <div class="hero-slideshow">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="hero-content text-center">
+                        <!-- <h1 class="display-4 font-weight-bold text-primary">Dive into Excellence with ILSS Club</h1>
+                        <p class="lead text-light">
+                            Join Kolkata's premier swimming destination, where tradition meets expertise. Experience
+                            unparalleled training and world-class facilities.
+                        </p> -->
+                        <!-- <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button> -->
+                    </div>
+                    <div class="hero-image">
+                        <!-- <img src="/assets/images/slide2.jpg" alt="Slide 1"> -->
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="hero-content text-center">
+                        <!-- <h1 class="display-4 font-weight-bold text-primary">Swim with the Best at ILSS Club</h1>
+                        <p class="lead text-light">
+                            Experience top-notch swimming facilities and expert training in the heart of Kolkata. Join
+                            us to
+                            enhance your skills and embrace aquatic excellence.
+                        </p> -->
+                        <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+                    </div>
+                    <div class="hero-image">
+                        <!-- <img src="/assets/images/slide1.jpg" alt="Slide 2"> -->
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <div class="hero-content text-center">
+                        <!-- <h1 class="display-4 font-weight-bold text-primary">Experience Swimming Excellence at ILSS Club
+                        </h1>
+                        <p class="lead text-light">
+                            Discover our premier facilities and expert coaching that set us apart. Join us to enhance
+                            your
+                            skills and enjoy world-class swimming experiences.
+                        </p> -->
+                        <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+                    </div>
+                    <div class="hero-image">
+                        <!-- <img src="/assets/images/slide3.jpg" alt="Slide 3"> -->
+                    </div>
+                </div>
+                <!-- Navigation controls -->
+                <button class="nav-button prev" (click)="prevSlide()">&#10094;</button>
+                <button class="nav-button next" (click)="nextSlide()">&#10095;</button>
+            </div>
+        </section>
+        <!-- Conditionally display the general-purpose hero section -->
+        <!-- 
+      @if (userType == 'Swimmer') {
+      <section class="swimmer-hero-section">
+          <div class="row mt-3">
+              <div class="col-md-12 text-center">
+                  <h1 class="header-swimmer">Dive into Excellence with ILSS Club</h1>
+              </div>
+          </div>
+          <div class="row mt-3">
+              <div class="col-md-12 text-center">
+              <p class="header-para">
+                  Join Kolkata's premier swimming destination, where tradition meets expertise. <br> Experience
+                  unparalleled training and world-class facilities.
+              </p>
+          </div>
+          </div>
+          <div class="row mt-3 d-flex justify-content-center   ">
+              <button class="btn button-pur" type="button" (click)="PurchaseForm()">Purchase Form</button>
+          </div> -->
+        <!-- <div class="row">
+                  <div class="col-md-6">
+                      <h1 class="header-swimmer">Dive into Excellence with ILSS Club</h1>
+                      <p class="header-para">
+                          Join Kolkata's premier swimming destination, where tradition meets expertise. Experience
+                          unparalleled training and world-class facilities.
+                      </p>
+                  </div>
+                  <div class="col-md-6">
+                      <button class="btn button-pur" type="button" (click)="PurchaseForm()">Purchase Form</button>
+                  </div>
+              </div>
+   -->
+        <!-- <div class="hero-slideshow"> 
+                  <div class="hero-slide active">
+                      <div class="hero-content text-center">
+                          <h1 class="display-4 font-weight-bold text-primary">Dive into Excellence with ILSS Club</h1>
+                          <p class="lead text-light">
+                              Join Kolkata's premier swimming destination, where tradition meets expertise. Experience
+                              unparalleled training and world-class facilities.
+                          </p>
+                          <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+                      </div>
+                      <div class="hero-image">
+                          <img src="/assets/images/slide2.jpg" alt="Slide 1">
+                      </div>
+                  </div>
+                  <div class="hero-slide">
+                      <div class="hero-content text-center">
+                          <h1 class="display-4 font-weight-bold text-primary">Swim with the Best at ILSS Club</h1>
+                          <p class="lead text-light">
+                              Experience top-notch swimming facilities and expert training in the heart of Kolkata. Join
+                              us to
+                              enhance your skills and embrace aquatic excellence.
+                          </p>
+                          <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+                      </div>
+                      <div class="hero-image">
+                          <img src="/assets/images/slide1.jpg" alt="Slide 2">
+                      </div>
+                  </div>
+                  <div class="hero-slide">
+                      <div class="hero-content text-center">
+                          <h1 class="display-4 font-weight-bold text-primary">Experience Swimming Excellence at ILSS Club
+                          </h1>
+                          <p class="lead text-light">
+                              Discover our premier facilities and expert coaching that set us apart. Join us to enhance
+                              your
+                              skills and enjoy world-class swimming experiences.
+                          </p>
+                          <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+                      </div>
+                      <div class="hero-image">
+                          <img src="/assets/images/slide3.jpg" alt="Slide 3">
+                      </div>
+                  </div>
+                  <button class="nav-button prev" (click)="prevSlide()">&#10094;</button>
+                  <button class="nav-button next" (click)="nextSlide()">&#10095;</button>
+              </div> -->
+        <!-- </section>
+      } -->
+        <!-- <section *ngIf="userType !== 'Swimmer'"> 
+          <h1>Welcome to the ILSS Club!</h1>
+          <p>This is the general homepage content for other user types.</p>
+      </section> -->
+        <!-- OfficeUser or Member Hero Section -->
+        <!-- <section *ngIf="userType !== 'Swimmer'" class="hero-section">
+      <div class="hero-slideshow"> 
+          <div class="hero-slide active">
+              <div class="hero-content text-center">
+                  <h1 class="display-4 font-weight-bold text-primary">Dive into Excellence with ILSS Club</h1>
+                  <p class="lead text-light">Join Kolkata's premier swimming destination, where tradition meets
+                      expertise.</p>
+                  <button class="btn btn-lg btn-primary" (click)="scrollToFeatures()">Get Started</button>
+              </div>
+              <div class="hero-image">
+                  <img src="/assets/images/slide2.jpg" alt="Slide 1">
+              </div>
+          </div> 
+          <button class="nav-button prev" (click)="prevSlide()">&#10094;</button>
+          <button class="nav-button next" (click)="nextSlide()">&#10095;</button>
+      </div>
+  </section> -->
+        <!-- <section *ngIf="!isHeroVisible" class="component-section">
+      <router-outlet></router-outlet>
+  </section> -->
+        <section *ngIf="!homeservice.isHeroVisible" class="component-section">
+            <router-outlet></router-outlet>
+        </section>
+        <section *ngIf="homeservice.isHeroVisible" id="features-section" class="features-section">
+            <div class="features-grid">
+                <ng-container *ngFor="let parent of dataSource.data">
+                    <button mat-button [matMenuTriggerFor]="menuDropdown" class="custom-animated-button">
+                        <mat-icon class="menu-icon">{{ getIconForParent(parent.name) }}</mat-icon>
+                        {{ parent.name }}
+                    </button>
+                    <mat-menu #menuDropdown="matMenu" yPosition="above" overlapTrigger="false">
+                        <ng-container *ngFor="let child of parent.children">
+                            <button mat-menu-item (click)="navigateTo(child.path)" *ngIf="child.path" class="menu-item">
+                                <mat-icon class="menu-icon">arrow_right</mat-icon>
+                                {{ child.name }}
+                            </button>
+                            <ng-container *ngIf="child.children && child.children.length > 0">
+                                <button mat-menu-item [matMenuTriggerFor]="subMenuDropdown" class="menu-item">
+                                    <mat-icon class="menu-icon">arrow_right</mat-icon>
+                                    {{ child.name }}
+                                </button>
+                                <mat-menu #subMenuDropdown="matMenu" yPosition="above" overlapTrigger="false">
+                                    <ng-container *ngFor="let subChild of child.children">
+                                        <button mat-menu-item (click)="navigateTo(subChild.path)" class="menu-item">
+                                            <mat-icon class="menu-icon">arrow_right</mat-icon>
+                                            {{ subChild.name }}
+                                        </button>
+                                        <ng-container *ngIf="subChild.children && subChild.children.length > 0">
+                                            <button mat-menu-item [matMenuTriggerFor]="subSubMenuDropdown"
+                                                class="menu-item">
+                                                <mat-icon class="menu-icon">arrow_right</mat-icon>
+                                                {{ subChild.name }}
+                                            </button>
+                                            <mat-menu #subSubMenuDropdown="matMenu" yPosition="above"
+                                                overlapTrigger="false">
+                                                <ng-container *ngFor="let subSubChild of subChild.children">
+                                                    <button mat-menu-item (click)="navigateTo(subSubChild.path)"
+                                                        class="menu-item">
+                                                        <mat-icon class="menu-icon">arrow_right</mat-icon>
+                                                        {{ subSubChild.name }}
+                                                    </button>
+                                                </ng-container>
+                                            </mat-menu>
+                                        </ng-container>
+                                    </ng-container>
+                                </mat-menu>
+                            </ng-container>
+                        </ng-container>
+                    </mat-menu>
+                </ng-container>
+            </div>
+        </section>
+    </div>
+</div>

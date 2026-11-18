@@ -1,0 +1,156 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <button
+          class="btn btn-custom-back"
+          (click)="goBack()"
+          aria-label="Go back"
+        >
+          <i class="fas fa-chevron-left"></i>
+          <span class="ms-2 d-none d-md-inline">Back</span>
+        </button>
+        <div class="page-title-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="head-elements-position mb-3">
+        <h6 class="header-title mb-0" style="color: brown">
+          Member Management
+        </h6>
+        <div class="app-search-box dropdown app-search">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              id="top-search"
+              [(ngModel)]="searchString"
+              (keydown.enter)="searchResult()"
+            />
+            <button
+              class="btn input-group-text"
+              type="submit"
+              (click)="searchResult()"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+            <button
+              class="btn input-restore"
+              type="submit"
+              (click)="restoreResult()"
+            ></button>
+          </div>
+        </div>
+        <span class="buttons marginP button-display">
+        <!-- <span class="buttons marginP button-display">  -->
+                   <button type="button" class="btn btn-success" (click)="generateDataForExcel()">  Excel
+                </button> 
+                <!-- </span> -->
+        </span>
+      </div>
+      <div class="d-block overflow-auto">
+        <div class="table-responsive">
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            class="mat-elevation-z8 demo-table"
+          >
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Student Name</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.userName
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="phone">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Phone No</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.phoneNo
+              }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Email</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{
+                element.userEmail
+              }}</mat-cell>
+            </ng-container>
+             <ng-container matColumnDef="view">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">View</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <a (click)="viewData(element)">
+                                    <img src="/assets/images/view-removebg-preview.png" width="30" height="30" />
+                                </a>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Edit">
+                            <mat-header-cell *matHeaderCellDef class="text-dark">Edit</mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                 <a (click)="edit(element)">
+                                    <img src="/assets/images/icon_edit.png" width="20" height="20" />
+                                </a>
+                            </mat-cell>
+                        </ng-container>
+            <ng-container matColumnDef="Status">
+              <mat-header-cell *matHeaderCellDef class="text-dark"
+                >Status</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">
+                <ng-container>
+                  <a
+                    class="mr-2"
+                    *ngIf="element.activate === 'I'; else toggleInactive"
+                    (click)="onToggleData(element)"
+                  >
+                    <div class="toggle-container">
+                      <div class="toggle-switch">
+                        <div class="toggle-switch-icon inactive">
+                          <div class="toggle-switch-line-1 line-1x"></div>
+                          <div class="toggle-switch-line-2 line-2x"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <ng-template #toggleInactive>
+                    <a class="mr-2" (click)="onToggleData(element)">
+                      <div class="toggle-container">
+                        <div class="toggle-switch">
+                          <div class="toggle-switch-icon">
+                            <div class="toggle-switch-line-1 line-1v"></div>
+                            <div class="toggle-switch-line-2 line-2v"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ng-template>
+                </ng-container>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns"
+              class="tableHeader"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          </table>
+        </div>
+      </div>
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="collectionSize"
+        [maxSize]="2"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="onPaginationClick($event)"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
+</div>
